@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - run: npm install
+      - run: bash .circleci/heroku-setup.sh
+      - add_ssh_keys:
+          fingerprints:
+            - "f1:ca:e0:ee:f9:07:95:0e:39:0c:da:c5:df:75:f0:ef"
+      - deploy:
+          name: Deploy build to Heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git push heroku-production master
+            fi
+general:
+  branches:
+    only:
+      - master

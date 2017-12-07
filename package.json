@@ -1,0 +1,21 @@
+{
+  "name": "geopulse",
+  "description": "",
+  "version": "0.1.0",
+  "repository": "git@github.com:seriouslysean/geopulse.git",
+  "author": "Sean Kennedy <sean@codeserious.com>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "next": "^4.2.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "license": "MIT"
+}
