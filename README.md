@@ -5,6 +5,7 @@
 ## Intro
 
 Goal of the project, features, etc.
+[View the demo on Heroku](https://geopulse-app.herokuapp.com/).
 
 ## Build
 
