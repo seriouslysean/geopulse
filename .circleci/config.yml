@@ -6,6 +6,10 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run:
+        name: Run application tests
+        command: |
+          yarn test
       - run: bash .circleci/heroku-setup.sh
       - add_ssh_keys:
           fingerprints:
