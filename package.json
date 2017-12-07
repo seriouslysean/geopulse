@@ -6,7 +6,7 @@
   "author": "Sean Kennedy <sean@codeserious.com>",
   "engines": {
     "node": "8.x.x",
-    "npm": "5.x.x"
+    "yarn": "1.x.x"
   },
   "scripts": {
     "dev": "next",
