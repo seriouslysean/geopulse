@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "repository": "git@github.com:seriouslysean/geopulse.git",
   "author": "Sean Kennedy <sean@codeserious.com>",
-  "main": "index.js",
+  "engines": {
+    "node": "8.x.x",
+    "npm": "5.x.x"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
