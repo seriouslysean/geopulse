@@ -1,0 +1,43 @@
+.header {
+  background: $brandLighter;
+}
+
+.header__content {
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $spacingL 0;
+}
+
+.header__logo {
+  color: $greyDark;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  &:hover {
+    color: lighten($greyDark, 20%);
+  }
+}
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin-left: $spacingS;
+  }
+}
+
+.header__link {
+}
+
+.header__link--active {
+  font-weight: 600;
+}

@@ -1,0 +1,18 @@
+.footer {
+  align-items: center;
+  background: $greyDark;
+  color: lighten($greyDark, 50%);
+  display: flex;
+  font-size: 1.2rem;
+  height: 6rem;
+  justify-content: center;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.footer__link {
+  color: lighten($greyDark, 65%);
+  &:hover {
+    color: white;
+  }
+}

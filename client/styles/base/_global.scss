@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $brandLighter;
+  color: $greyDark;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $fontM;
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+[class^="page-"] {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  section {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+
+a {
+  color: $greyDark;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    color: lighten($greyDark, 20%);
+  }
+}

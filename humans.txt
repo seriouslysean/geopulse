@@ -1,0 +1,16 @@
+/* TEAM */
+	Developer: Sean Kennedy
+	Contact: sean [at] codeserious.com
+	Twitter: @seriouslysean
+	From: Philadelphia, PA
+
+/* THANKS */
+  
+  My Family
+	Location: Philadelphia, PA
+		
+
+/* SITE */
+	Language: English
+	Doctype: HTML5
+	IDE: Visual Studio Code
