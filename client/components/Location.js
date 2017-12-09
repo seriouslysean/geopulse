@@ -12,18 +12,24 @@ class Location extends React.Component {
           defaultZoom={14}
           defaultCenter={{ lat, lng }}
           defaultOptions={{
-            styles: setupMap,
-            streetViewControl: false,
-            scaleControl: false,
-            mapTypeControl: false,
-            panControl: false,
-            zoomControl: false,
-            rotateControl: false,
-            fullscreenControl: false,
+            backgroundColor: "#90acf3",
+            clickableIcons: false,
+            disableDefaultUI: true,
             draggable: false,
-            scrollwheel: false
+            fullscreenControl: false,
+            gestureHandling: "none",
+            keyboardShortcuts: false,
+            mapTypeControl: false,
+            maxZoom: 14,
+            minZoom: 14,
+            panControl: false,
+            rotateControl: false,
+            scaleControl: false,
+            scrollwheel: false,
+            streetViewControl: false,
+            styles: setupMap,
+            zoomControl: false
           }}
-          disableDefaultUI={true}
         />
       </div>
     );

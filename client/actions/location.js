@@ -1,7 +1,7 @@
 export const getLocation = () => {
   return dispatch => {
     return new Promise((resolve, reject) => {
-      if ("geolocation" in navigator) {
+      if (navigator && navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           location => {
             const { latitude, longitude } = location.coords;
