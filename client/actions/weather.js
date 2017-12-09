@@ -2,7 +2,7 @@ import axios from "axios";
 import config from "../../config/config";
 
 export const getWeather = (latitude, longitude) => {
-  const weatherEndpoint = `http://api.wunderground.com/api/${config.WEATHER_UNDERGROUND_API_TOKEN}/conditions/q/${
+  const weatherEndpoint = `https://api.wunderground.com/api/${config.WEATHER_UNDERGROUND_API_TOKEN}/conditions/q/${
     latitude
   },${longitude}.json`;
   return async dispatch => {
