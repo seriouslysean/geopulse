@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 
-function withLocation(WrappedComponent) {
+function withGeolocation(WrappedComponent) {
   class HOC extends React.Component {
     state = {
       ready: false
     };
     componentWillReceiveProps(nextProps) {
-      const { location } = nextProps;
-      if (!this.state.ready && location) {
+      const { geolocation } = nextProps;
+      if (!this.state.ready && geolocation) {
         this.setState(() => ({
           ready: true
         }));
@@ -22,11 +22,11 @@ function withLocation(WrappedComponent) {
     }
   }
 
-  const mapStateToProps = ({ location }) => ({
-    location
+  const mapStateToProps = ({ geolocation }) => ({
+    geolocation
   });
 
   return connect(mapStateToProps)(HOC);
 }
 
-export default withLocation;
+export default withGeolocation;

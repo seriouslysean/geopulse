@@ -20,7 +20,12 @@ class Weather extends React.Component {
         <div className="content-container">
           <div className="weather__content">
             <h1 className="section__title">Weather</h1>
+
             {this.props.ready ? this.renderContent() : <Loading />}
+
+            <a rel="external" href="https://www.wunderground.com/" className="section__attribution">
+              Powered by Weather Underground
+            </a>
           </div>
         </div>
       </section>

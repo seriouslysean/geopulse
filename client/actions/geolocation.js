@@ -1,14 +1,12 @@
-export const getLocation = () => {
+export const getGeolocation = () => {
   return dispatch => {
     return new Promise((resolve, reject) => {
       if (navigator && navigator.geolocation) {
-        console.log("Has geolocation");
         navigator.geolocation.getCurrentPosition(
           location => {
             const { latitude, longitude } = location.coords;
-            dispatch(setLocation(latitude, longitude));
-            console.log("Location set");
-            resolve("Location set");
+            dispatch(setGeolocation(latitude, longitude));
+            resolve(location.coords);
           },
           () => {
             reject("Geolocation failed");
@@ -24,8 +22,9 @@ export const getLocation = () => {
   };
 };
 
-export const setLocation = (latitude = false, longitude = false) => ({
-  type: "SET_LOCATION",
+export const SET_GEOLOCATION = "SET_GEOLOCATION";
+export const setGeolocation = (latitude = false, longitude = false) => ({
+  type: SET_GEOLOCATION,
   latitude,
   longitude
 });

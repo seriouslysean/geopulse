@@ -5,7 +5,7 @@ import Loading from "../components/Loading";
 
 class Location extends React.Component {
   renderContent = () => {
-    const { longitude: lng, latitude: lat } = this.props.location;
+    const { longitude: lng, latitude: lat } = this.props.geolocation;
     return (
       <div className="content">
         <GoogleMap

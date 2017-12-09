@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 
-function withWeather(WrappedComponent) {
+function withPhotos(WrappedComponent) {
   class HOC extends React.Component {
     state = {
       ready: false
     };
     componentWillReceiveProps(nextProps) {
-      const { geolocation, weather } = nextProps;
-      if (!this.state.ready && geolocation && weather) {
+      const { geolocation, photos } = nextProps;
+      if (!this.state.ready && geolocation && photos) {
         this.setState(() => ({
           ready: true
         }));
@@ -22,12 +22,12 @@ function withWeather(WrappedComponent) {
     }
   }
 
-  const mapStateToProps = ({ geolocation, weather }) => ({
+  const mapStateToProps = ({ geolocation, photos }) => ({
     geolocation,
-    weather
+    photos
   });
 
   return connect(mapStateToProps)(HOC);
 }
 
-export default withWeather;
+export default withPhotos;

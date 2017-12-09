@@ -1,15 +1,17 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import locationReducer from "../client/reducers/location";
+import geolocationReducer from "../client/reducers/geolocation";
 import weatherReducer from "../client/reducers/weather";
+import photosReducer from "../client/reducers/photos";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default () => {
   const store = createStore(
     combineReducers({
-      location: locationReducer,
-      weather: weatherReducer
+      geolocation: geolocationReducer,
+      weather: weatherReducer,
+      photos: photosReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   );

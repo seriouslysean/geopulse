@@ -8,20 +8,20 @@ const renderContent = props => (
   </ul>
 );
 
-const Videos = props => (
-  <section className="section videos">
+const Photos = props => (
+  <section className="section photos">
     <div className="content-container">
-      <div className="videos__content">
-        <h1 className="section__title">Videos</h1>
+      <div className="photos__content">
+        <h1 className="section__title">Photos</h1>
 
         {props.loaded ? renderContent(props) : <Loading />}
 
-        <a rel="external" href="https://www.youtube.com/" className="section__attribution">
-          Powered by YouTube
+        <a rel="external" href="https://www.instagram.com/" className="section__attribution">
+          Powered by Instagram
         </a>
       </div>
     </div>
   </section>
 );
 
-export default Videos;
+export default Photos;

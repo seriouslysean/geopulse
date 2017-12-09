@@ -51,7 +51,8 @@ module.exports = env => {
     plugins: [
       CSSExtract,
       new webpack.DefinePlugin({
-        "process.env.KEY": JSON.stringify(process.env.KEY)
+        "process.env.WEATHER_UNDERGROUND_API_TOKEN": JSON.stringify(process.env.WEATHER_UNDERGROUND_API_TOKEN),
+        "process.env.INSTAGRAM_API_TOKEN": JSON.stringify(process.env.INSTAGRAM_API_TOKEN)
       })
     ],
     devtool: isProduction ? "source-map" : "inline-source-map",

@@ -1,8 +1,10 @@
+import { SET_WEATHER } from "../actions/weather";
+
 export const weatherReducerDefaultState = false;
 
 export default (state = weatherReducerDefaultState, action) => {
   switch (action.type) {
-    case "SET_WEATHER":
+    case SET_WEATHER:
       return {
         ...state,
         city: action.city,
