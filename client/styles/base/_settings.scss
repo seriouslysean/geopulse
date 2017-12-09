@@ -1,9 +1,10 @@
 // Colors
-$brandLighter: #fbfbf2;
-$brandLight: #e5e6e4;
-$brandDefault: #cfd2cd;
-$brandDark: #a6a2a2;
-$brandDarker: #847577;
+$skyDark: #43578c;
+$skyLight: #90acf3;
+$earthLight: #8dbbae;
+$earthMedium: #a6a2a2;
+$earthDark: #553139;
+$earthDarker: #301c21;
 $greyDark: #333;
 
 // Spacing
@@ -11,6 +12,10 @@ $spacingS: 1.2rem;
 $spacingM: 1.6rem;
 $spacingL: 3.2rem;
 $spacingXL: 4.8rem;
+
+// Font family
+$fontBody: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontHeadings: "Arial Black", "Arial Bold", Gadget, sans-serif;
 
 // Font sizes
 $fontS: 1.4rem;

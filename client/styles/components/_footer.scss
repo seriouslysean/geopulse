@@ -1,7 +1,7 @@
 .footer {
   align-items: center;
-  background: $greyDark;
-  color: lighten($greyDark, 50%);
+  background: $earthDarker;
+  color: lighten($earthDarker, 50%);
   display: flex;
   font-size: 1.2rem;
   height: 6rem;
@@ -11,7 +11,7 @@
 }
 
 .footer__link {
-  color: lighten($greyDark, 65%);
+  color: lighten($earthDarker, 65%);
   &:hover {
     color: white;
   }

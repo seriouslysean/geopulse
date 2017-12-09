@@ -1,0 +1,18 @@
+.section {
+  position: relative;
+}
+
+.section__title {
+  color: white;
+  font-family: $fontHeadings;
+  font-weight: normal;
+  font-size: 8rem;
+  right: 0;
+  line-height: 1;
+  margin: 0;
+  opacity: 0.2;
+  padding: $spacingM $spacingL;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+}

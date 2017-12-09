@@ -9,20 +9,22 @@ import NotFoundPage from "../pages/NotFoundPage";
 
 export const history = createHistory();
 
-const AppRouter = () => (
-  <Router history={history}>
-    <div className="app">
-      <Header />
-
-      <Switch>
-        <Route path="/" component={FeedPage} exact={true} />
-        <Route path="/about" component={AboutPage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-
-      <Footer />
-    </div>
-  </Router>
-);
+class AppRouter extends React.Component {
+  render() {
+    return (
+      <Router history={history}>
+        <div className="app">
+          <Header />
+          <Switch>
+            <Route path="/" component={FeedPage} exact={true} />
+            <Route path="/about" component={AboutPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
+}
 
 export default AppRouter;

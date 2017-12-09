@@ -1,5 +1,5 @@
 .header {
-  background: $brandLighter;
+  background: $skyDark;
 }
 
 .header__content {
@@ -10,14 +10,14 @@
 }
 
 .header__logo {
-  color: $greyDark;
+  color: white;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 4rem;
   font-weight: 600;
   transition: color 0.3s ease;
   &:hover {
-    color: lighten($greyDark, 20%);
+    color: darken(white, 25%);
   }
 }
 
@@ -36,6 +36,10 @@
 }
 
 .header__link {
+  color: white;
+  &:hover {
+    color: darken(white, 25%);
+  }
 }
 
 .header__link--active {
