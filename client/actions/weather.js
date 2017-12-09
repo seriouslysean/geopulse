@@ -1,5 +1,5 @@
 import axios from "axios";
-import weatherData from "../../__tests__/fixtures/weather";
+import weatherData from "../../fixtures/weather";
 
 export const getWeather = (latitude, longitude) => {
   const weatherEndpoint = `http://api.wunderground.com/api/424345db26b368ff/conditions/q/${latitude},${longitude}.json`;
