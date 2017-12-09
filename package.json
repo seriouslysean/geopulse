@@ -15,15 +15,12 @@
     "dev": "webpack-dev-server",
     "test": "jest --colors",
     "start": "node server/server.js",
+    "tunnel": "lt -p 3000 -s geopulseapp",
     "heroku-postbuild": "yarn build:prod"
   },
   "jest": {
-    "setupFiles": [
-      "<rootDir>/config/setupTests.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "setupFiles": ["<rootDir>/config/setupTests.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -61,6 +58,7 @@
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
     "jest": "^21.2.1",
+    "localtunnel": "^1.8.3",
     "react-test-renderer": "^16.2.0"
   }
 }
