@@ -1,19 +1,39 @@
 .section {
-  min-height: 25vh;
-  padding: $spacingL*2 $spacingS $spacingS;
   position: relative;
-  @include media(">tablet") {
-    padding: $spacingL*2 $spacingL $spacingL;
-  }
   .content {
     position: relative;
     z-index: 1;
   }
 }
 
-.section--no-space {
-  margin: 0;
-  padding: 0;
+.section--spacing {
+  min-height: 25vh;
+  padding: $spacingL*2 $spacingS $spacingS;
+  @include media(">tablet") {
+    padding: $spacingL*2 $spacingL $spacingL;
+  }
+}
+
+.section--bg-sky-dark {
+  background-color: $skyDark;
+}
+.section--bg-sky-light {
+  background-color: $skyLight;
+}
+.section--bg-earth-light {
+  background-color: $earthLight;
+}
+.section--bg-earth-medium {
+  background-color: $earthMedium;
+}
+.section--bg-earth-dark {
+  background-color: $earthDark;
+}
+.section--bg-earth-darker {
+  background-color: $earthDarker;
+}
+.section--bg-earth-darkest {
+  background-color: $earthDarkest;
 }
 
 .section__title {

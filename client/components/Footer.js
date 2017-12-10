@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => (
-  <footer className="footer">
+  <footer className="section section--bg-earth-darkest footer">
     <div className="content-container">
       <p>
         Crafted with love /{" "}

@@ -9,7 +9,7 @@ const renderContent = props => (
 );
 
 const Tweets = props => (
-  <section className="section tweets">
+  <section className="section section--spacing section--bg-earth-dark tweets">
     <div className="content-container">
       <div className="tweets__content">
         <h1 className="section__title">Tweets</h1>

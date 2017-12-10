@@ -37,7 +37,7 @@ class Weather extends React.Component {
   };
   render() {
     return (
-      <section className="section weather">
+      <section className="section section--spacing section--bg-earth-light weather">
         <div className="content-container">
           <div className="weather__content">
             <h1 className="section__title">Weather</h1>

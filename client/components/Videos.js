@@ -9,7 +9,7 @@ const renderContent = props => (
 );
 
 const Videos = props => (
-  <section className="section videos">
+  <section className="section section--spacing section--bg-earth-darker videos">
     <div className="content-container">
       <div className="videos__content">
         <h1 className="section__title">Videos</h1>

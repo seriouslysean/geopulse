@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => (
-  <header className="header">
+  <header className="section section--bg-sky-dark header">
     <div className="content-container">
       <div className="header__content">
         <Link to="/" className="header__logo">

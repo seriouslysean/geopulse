@@ -34,7 +34,7 @@ class Photos extends React.Component {
   };
   render() {
     return (
-      <section className="section photos">
+      <section className="section section--spacing section--bg-earth-medium photos">
         <div className="content-container content-container--grid-spacing">
           <div className="photos__content">
             <h1 className="section__title">Photos</h1>

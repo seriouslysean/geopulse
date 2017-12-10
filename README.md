@@ -4,8 +4,7 @@
 
 ## Intro
 
-Goal of the project, features, etc.
-[View the demo on Heroku](https://geopulse-app.herokuapp.com/).
+Goal of the project, features, etc. [View the demo on Heroku](https://geopulse-app.herokuapp.com/).
 
 ## Build
 
@@ -22,6 +21,17 @@ Goal of the project, features, etc.
      * Success, load content
      * Failure, show error
 1. Start loading content with Longitude + Latitude
+   * Map
    * Weather
-   * Youtube
+   * Instagram
    * Twitter
+   * Youtube
+
+## Roadmap
+
+* Manual location selection
+* Location distance option
+* Weather icons/animations
+* Improved Instagram support
+  * Requires user login and additional tools to upgrade from sandboxed mode
+* User authentication (save locations)

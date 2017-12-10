@@ -10,8 +10,11 @@ export const getPhotos = (latitude, longitude) => {
       const photosData = await axios(photosEndpoint);
       const { data: photos } = photosData.data;
       const collection = [];
+      let maxCount = 0;
       for (const photo in photos) {
         collection.push(photos[photo]);
+        maxCount++;
+        if (maxCount >= 6) break;
       }
       return dispatch(
         setPhotos({
