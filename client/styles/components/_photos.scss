@@ -11,9 +11,12 @@
 }
 
 .photos__photo {
-  width: calc(33.333333% - 2rem);
+  width: calc(100% - 2rem);
   margin: 1rem;
   position: relative;
+  @include media(">tablet") {
+    width: calc(33.333333% - 2rem);
+  }
   a {
     &:hover {
       .photos__username {
@@ -47,12 +50,15 @@
   justify-content: center;
   line-height: 1;
   margin: 0;
-  opacity: 0;
+  opacity: 1;
   padding: 1rem;
   position: absolute;
   right: 0;
   transition: all 0.3s ease;
   width: 100%;
+  @include media(">tablet") {
+    opacity: 0;
+  }
   &:before {
     content: "@";
   }

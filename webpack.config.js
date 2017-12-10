@@ -40,7 +40,8 @@ module.exports = env => {
               {
                 loader: "sass-loader",
                 options: {
-                  sourceMap: true
+                  sourceMap: true,
+                  includePaths: [path.resolve(__dirname, "node_modules")]
                 }
               }
             ]

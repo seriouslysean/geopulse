@@ -15,17 +15,24 @@
   display: flex;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 600;
   transition: color 0.3s ease;
+  @include media(">tablet") {
+    font-size: 4rem;
+  }
   &:hover {
     color: darken(white, 25%);
   }
   img {
     display: block;
-    height: 5rem;
+    height: 3rem;
     margin-right: $spacingS;
-    width: 5rem;
+    width: 3rem;
+    @include media(">tablet") {
+      height: 5rem;
+      width: 5rem;
+    }
   }
 }
 

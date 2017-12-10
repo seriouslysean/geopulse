@@ -1,7 +1,10 @@
 .section {
   min-height: 25vh;
-  padding: $spacingL*2 $spacingL $spacingL;
+  padding: $spacingL*2 $spacingS $spacingS;
   position: relative;
+  @include media(">tablet") {
+    padding: $spacingL*2 $spacingL $spacingL;
+  }
   .content {
     position: relative;
     z-index: 1;
@@ -17,25 +20,33 @@
   color: white;
   font-family: $fontHeadings;
   font-weight: 700;
-  font-size: 8rem;
+  font-size: 6rem;
   right: 0;
   line-height: 1;
   margin: 0;
   opacity: 0.2;
-  padding: $spacingM $spacingL;
+  padding: $spacingM $spacingM;
   position: absolute;
+  text-align: right;
   text-transform: uppercase;
   top: 0;
+  @include media(">tablet") {
+    font-size: 8rem;
+    padding: $spacingM $spacingL;
+  }
 }
 
 .section__attribution {
   bottom: 0;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   padding: $spacingM $spacingL;
   position: absolute;
   margin: 0;
   opacity: 0.2;
   right: 0;
   text-transform: lowercase;
+  @include media(">tablet") {
+    font-size: 0.8rem;
+  }
 }

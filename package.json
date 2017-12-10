@@ -19,12 +19,8 @@
     "heroku-postbuild": "yarn build:prod"
   },
   "jest": {
-    "setupFiles": [
-      "<rootDir>/config/setupTests.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "setupFiles": ["<rootDir>/config/setupTests.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -41,6 +37,7 @@
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "history": "^4.7.2",
+    "include-media": "^1.4.9",
     "node-sass": "^4.7.2",
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",
