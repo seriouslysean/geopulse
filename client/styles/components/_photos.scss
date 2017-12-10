@@ -12,10 +12,16 @@
 
 .photos__photo {
   width: calc(100% - 2rem);
-  margin: 1rem;
+  margin: 0 1rem 2rem;
   position: relative;
+  @include media("<desktop") {
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+  }
   @include media(">tablet") {
     width: calc(33.333333% - 2rem);
+    margin: 1rem;
   }
   a {
     &:hover {
