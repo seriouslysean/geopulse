@@ -6,7 +6,10 @@ const Header = () => (
     <div className="content-container">
       <div className="header__content">
         <Link to="/" className="header__logo">
-          Geopulse
+          <span>
+            <img src="./assets/logo-geopulse.svg" alt="Geopulse logo" />
+          </span>
+          <span>Geopulse</span>
         </Link>
         <nav className="header__navigation">
           <ul>

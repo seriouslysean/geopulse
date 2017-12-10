@@ -1,3 +1,59 @@
 .photos {
   background: $earthMedium;
 }
+
+.photos__grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.photos__photo {
+  width: calc(33.333333% - 2rem);
+  margin: 1rem;
+  position: relative;
+  a {
+    &:hover {
+      .photos__username {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.photos__image {
+  background: transparent none center center no-repeat;
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: auto;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  img {
+    display: none;
+  }
+}
+
+.photos__username {
+  background: rgba(black, 0.6);
+  bottom: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  opacity: 0;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s ease;
+  width: 100%;
+  &:before {
+    content: "@";
+  }
+}

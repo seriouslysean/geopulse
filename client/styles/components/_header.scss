@@ -3,14 +3,16 @@
 }
 
 .header__content {
-  align-content: center;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   padding: $spacingL 0;
 }
 
 .header__logo {
+  align-items: center;
   color: white;
+  display: flex;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 4rem;
@@ -18,6 +20,12 @@
   transition: color 0.3s ease;
   &:hover {
     color: darken(white, 25%);
+  }
+  img {
+    display: block;
+    height: 5rem;
+    margin-right: $spacingS;
+    width: 5rem;
   }
 }
 

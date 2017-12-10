@@ -2,15 +2,36 @@ import React from "react";
 import Loading from "../components/Loading";
 
 class Weather extends React.Component {
+  state = {
+    showFarenheit: true
+  };
+  handleTemperatureToggle = e => {
+    e.preventDefault();
+    this.setState(prevState => ({
+      showFarenheit: !prevState.showFarenheit
+    }));
+  };
   renderContent = () => {
     const { city, state, country, weather, temp_f, temp_c, icon, forecast_url } = this.props.weather;
     return (
       <div className="content">
-        <h2>{temp_f}</h2>
-        <h3>{weather}</h3>
-        <p>
-          {city} / {state} / {country}
-        </p>
+        <div
+          className={`weather__temperature ${
+            this.state.showFarenheit ? "weather__temperature--f" : "weather__temperature--c"
+          }`}
+          onClick={this.handleTemperatureToggle}
+        >
+          <h2>
+            <span className="temp temp--f">{temp_f}&deg;F</span>
+            <span className="temp temp--c">{temp_c}&deg;C</span>
+          </h2>
+        </div>
+        <div className="weather__details">
+          <h3>{weather}</h3>
+          <p>
+            {city}, {state} / {country}
+          </p>
+        </div>
       </div>
     );
   };

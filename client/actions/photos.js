@@ -1,3 +1,4 @@
+import axios from "axios";
 import config from "../../config/config";
 
 export const getPhotos = (latitude, longitude) => {
@@ -6,25 +7,19 @@ export const getPhotos = (latitude, longitude) => {
   }&lng=${longitude}&distance=3000`;
   return async dispatch => {
     try {
-      console.log("set photos");
-      // const photosData = await axios(photosEndpoint);
-      // const {
-      //   current_observation: { display_location: { city, state, country }, weather, temp_f, temp_c, icon, forecast_url }
-      // } = weatherData.data;
-      // return dispatch(
-      //   setWeather({
-      //     city,
-      //     state,
-      //     country,
-      //     weather,
-      //     temp_f,
-      //     temp_c,
-      //     icon,
-      //     forecast_url
-      //   })
-      // );
+      const photosData = await axios(photosEndpoint);
+      const { data: photos } = photosData.data;
+      const collection = [];
+      for (const photo in photos) {
+        collection.push(photos[photo]);
+      }
+      return dispatch(
+        setPhotos({
+          collection
+        })
+      );
     } catch (e) {
-      console.log("Error fetching weather data", e);
+      console.log("Error fetching photos data", e);
     }
   };
 };

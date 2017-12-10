@@ -14,7 +14,7 @@ const Videos = props => (
       <div className="videos__content">
         <h1 className="section__title">Videos</h1>
 
-        {props.loaded ? renderContent(props) : <Loading />}
+        {props.ready ? renderContent(props) : <Loading />}
 
         <a rel="external" href="https://www.youtube.com/" className="section__attribution">
           Powered by YouTube

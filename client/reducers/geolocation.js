@@ -6,7 +6,6 @@ export default (state = geolocationReducerDefaultState, action) => {
   switch (action.type) {
     case SET_GEOLOCATION:
       return {
-        ...state,
         latitude: action.latitude,
         longitude: action.longitude
       };

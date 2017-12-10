@@ -40,7 +40,7 @@ export const setWeather = ({
   icon = "",
   forecast_url = ""
 }) => ({
-  type: "SET_WEATHER",
+  type: SET_WEATHER,
   city,
   state,
   country,

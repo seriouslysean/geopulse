@@ -14,7 +14,7 @@ const Tweets = props => (
       <div className="tweets__content">
         <h1 className="section__title">Tweets</h1>
 
-        {props.loaded ? renderContent(props) : <Loading />}
+        {props.ready ? renderContent(props) : <Loading />}
 
         <a rel="external" href="https://www.twitter.com/" className="section__attribution">
           Powered by Twitter

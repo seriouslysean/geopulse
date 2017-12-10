@@ -1,6 +1,16 @@
 .section {
   min-height: 25vh;
+  padding: $spacingL*2 $spacingL $spacingL;
   position: relative;
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.section--no-space {
+  margin: 0;
+  padding: 0;
 }
 
 .section__title {

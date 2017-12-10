@@ -36,7 +36,7 @@ class Location extends React.Component {
   };
   render() {
     return (
-      <section className="location">
+      <section className="section section--no-space location">
         <div className="location__content">{this.props.ready ? this.renderContent() : <Loading />}</div>
       </section>
     );

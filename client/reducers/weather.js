@@ -6,7 +6,6 @@ export default (state = weatherReducerDefaultState, action) => {
   switch (action.type) {
     case SET_WEATHER:
       return {
-        ...state,
         city: action.city,
         state: action.state,
         country: action.country,

@@ -5,10 +5,7 @@ export const photoReducerDefaultState = false;
 export default (state = photoReducerDefaultState, action) => {
   switch (action.type) {
     case SET_PHOTOS:
-      return {
-        ...state,
-        photos: action.photos
-      };
+      return action.photos;
     default:
       return state;
   }
