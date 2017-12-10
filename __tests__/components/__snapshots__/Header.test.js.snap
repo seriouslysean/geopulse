@@ -2,7 +2,7 @@
 
 exports[`should render Header correctly 1`] = `
 <header
-  className="header"
+  className="section section--bg-sky-dark header"
 >
   <div
     className="content-container"
