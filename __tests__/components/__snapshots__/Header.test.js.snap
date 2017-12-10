@@ -15,7 +15,15 @@ exports[`should render Header correctly 1`] = `
         replace={false}
         to="/"
       >
-        Geopulse
+        <span>
+          <img
+            alt="Geopulse logo"
+            src="./assets/logo-geopulse.svg"
+          />
+        </span>
+        <span>
+          Geopulse
+        </span>
       </Link>
       <nav
         className="header__navigation"
