@@ -12,6 +12,23 @@ body {
   font-family: $fontBody;
   font-size: $fontM;
   line-height: 1.6;
+  position: relative;
+  &:before,
+  &:after {
+    display: block;
+    position: fixed;
+    top: -25%;
+    left: 0;
+    right: 0;
+    height: 25%;
+    background: $skyDark;
+    content: "";
+  }
+  &:after {
+    top: auto;
+    bottom: -25%;
+    background: $earthDarkest;
+  }
 }
 
 h1,
