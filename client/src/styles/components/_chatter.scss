@@ -5,19 +5,25 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: 0;
+  margin: 0 1rem;
   padding: 0;
   list-style: none;
+  @include media(">tablet") {
+    margin: 0;
+  }
 }
 
 .chatter__status {
   background: rgba(white, 0.2);
   color: white;
-  margin: 1rem 1rem $spacingL*1.5;
-  max-width: 40rem;
+  margin: 0 auto $spacingL*1.75;
   padding: $spacingL;
   position: relative;
   width: 100%;
+  @include media(">tablet") {
+    margin: 1rem 1rem $spacingL*1.5;
+    max-width: 40rem;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -33,13 +39,13 @@
     color: white;
   }
   &:nth-child(even) {
-    margin-left: auto;
+    @include media(">tablet") {
+      margin-left: auto;
+    }
     &:after {
       left: auto;
       right: 50px;
       transform: scale(-1, 1);
-    }
-    .status__username {
     }
   }
 }
