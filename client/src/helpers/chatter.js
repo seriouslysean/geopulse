@@ -9,8 +9,6 @@ export const setupTweetText = tweet => {
   let toReplace = [];
   let text = tweet.text;
 
-  console.log(tweet);
-
   _.forEach(entities, (value, key) => {
     switch (key) {
       case "hashtags":
