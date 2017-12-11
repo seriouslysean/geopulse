@@ -31,6 +31,7 @@ class FeedPage extends React.Component {
     });
   }
   render() {
+    console.log(config.GOOGLE_MAPS_API_KEY);
     return (
       <div className="page-feed">
         <div className="page-feed">
