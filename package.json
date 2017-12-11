@@ -5,11 +5,6 @@
   "author": "Sean Kennedy <sean@codeserious.com>",
   "license": "MIT",
   "private": true,
-  "engines": {
-    "node": "9.x.x",
-    "npm": "5.x.x",
-    "yarn": "1.x.x"
-  },
   "scripts": {
     "dev": "NODE_ENV=development concurrently \"yarn dev:server\" \"yarn dev:build-server\" \"yarn dev:build-client\"",
     "dev:server": "nodemon --watch server/build --exec \"yarn start\"",
