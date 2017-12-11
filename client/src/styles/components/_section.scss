@@ -8,7 +8,7 @@
 
 .section--spacing {
   min-height: 25vh;
-  padding: $spacingL*2 $spacingS $spacingS;
+  padding: $spacingL*2 $spacingS $spacingL;
   @include media(">tablet") {
     padding: $spacingL*2 $spacingL $spacingL;
   }

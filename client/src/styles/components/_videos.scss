@@ -9,6 +9,7 @@
   padding: 0;
   list-style: none;
   @include media(">tablet") {
+    flex-direction: column;
     margin: 0;
   }
 }
@@ -16,9 +17,9 @@
 .videos__video {
   display: flex;
   cursor: pointer;
-  flex: 1 0 auto;
+  flex: 1 0 100%;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   position: relative;
   &:after {
     border: 0rem solid white;
