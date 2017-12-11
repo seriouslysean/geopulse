@@ -3,24 +3,23 @@
 
 .videos__list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   margin: 0 1rem;
   padding: 0;
   list-style: none;
   @include media(">tablet") {
-    flex-direction: column;
+    flex-direction: row;
     margin: 0;
   }
 }
 
 .videos__video {
-  display: flex;
   cursor: pointer;
   flex: 1 0 100%;
-  flex-direction: column;
   margin: 0 auto 2rem;
   position: relative;
+  width: 100%;
   &:after {
     border: 0rem solid white;
     content: "";
@@ -46,6 +45,7 @@
 .videos__image {
   background: transparent none center center no-repeat;
   background-size: cover;
+  width: 100%;
   &:before {
     content: "";
     display: block;

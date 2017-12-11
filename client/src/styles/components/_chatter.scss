@@ -20,6 +20,7 @@
   padding: $spacingL;
   position: relative;
   width: 100%;
+  word-break: break-all;
   @include media(">tablet") {
     margin: 1rem 1rem $spacingL*1.5;
     max-width: 40rem;
