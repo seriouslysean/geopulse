@@ -6,10 +6,14 @@ class Chatter extends React.Component {
   renderChatter = () => {
     const collection = this.props.chatter.collection;
     return collection.map(status => {
-      const { entities, favorite_count, id, retweet_count, text, user: { screen_name } } = status;
+      if (status.retweeted_status) {
+        status = status.retweeted_status;
+      }
+      const { id, user: { screen_name } } = status;
+
       return (
         <li key={id} className="chatter__status">
-          <div className="chatter__text">{setupTweetText(text, entities)}</div>
+          <div className="chatter__text" dangerouslySetInnerHTML={{ __html: setupTweetText(status) }} />
           <div className="status__username">
             <a rel="external" href={getTwitterUserUrl(screen_name)} title={`Follow ${screen_name} on Twitter`}>
               @{screen_name}

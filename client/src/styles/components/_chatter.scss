@@ -36,7 +36,10 @@
     width: 0;
   }
   a {
-    color: white;
+    color: rgba(white, 0.75);
+    &:hover {
+      color: white;
+    }
   }
   &:nth-child(even) {
     @include media(">tablet") {
