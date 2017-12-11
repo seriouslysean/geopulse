@@ -1,19 +1,18 @@
 import axios from "axios";
-import config from "../../../config/config";
 
 export const getChatter = (latitude, longitude) => {
-  const chatterEndpoint = `/api/chatter/${latitude}/${longitude}`;
+  const endpoint = `/api/chatter/${latitude}/${longitude}`;
   return async dispatch => {
     try {
-      const chatterData = await axios(chatterEndpoint);
-      const { statuses: collection } = chatterData.data;
+      const data = await axios(endpoint);
+      const { statuses: collection } = data.data;
       return dispatch(
         setChatter({
           collection
         })
       );
     } catch (e) {
-      console.log("Error fetching chatter data", e);
+      console.log("Error fetching data", e);
     }
   };
 };

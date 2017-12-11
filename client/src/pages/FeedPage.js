@@ -5,10 +5,12 @@ import { getGeolocation, setGeolocationUnavailable } from "../actions/geolocatio
 import { getWeather } from "../actions/weather";
 import { getPhotos } from "../actions/photos";
 import { getChatter } from "../actions/chatter";
+import { getVideos } from "../actions/videos";
 import withGeolocation from "../hocs/withGeolocation";
 import withWeather from "../hocs/withWeather";
 import withPhotos from "../hocs/withPhotos";
 import withChatter from "../hocs/withChatter";
+import withVideos from "../hocs/withVideos";
 import Location from "../components/Location";
 import Weather from "../components/Weather";
 import Photos from "../components/Photos";
@@ -20,7 +22,7 @@ const LocationWithGeolocation = withGeolocation(Location);
 const WeatherWithWeather = withGeolocation(withWeather(Weather));
 const PhotosWithPhotos = withGeolocation(withPhotos(Photos));
 const ChatterWithChatter = withGeolocation(withChatter(Chatter));
-const VideosWithVideos = withGeolocation(Videos);
+const VideosWithVideos = withGeolocation(withVideos(Videos));
 
 class FeedPage extends React.Component {
   state = {
@@ -34,6 +36,7 @@ class FeedPage extends React.Component {
         this.props.getWeather(latitude, longitude);
         this.props.getPhotos(latitude, longitude);
         this.props.getChatter(latitude, longitude);
+        this.props.getVideos(latitude, longitude);
       })
       .catch(() => {
         this.props.setGeolocationUnavailable();
@@ -52,7 +55,7 @@ class FeedPage extends React.Component {
       <div className="section-container">
         <LocationWithGeolocation
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
-            config.GOOGLE_MAPS_API_KEY
+            config.GOOGLE_API_KEY
           }&v=3.exp&libraries=geometry,places`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `400px` }} />}
@@ -83,7 +86,8 @@ const mapDispatchToProps = dispatch => ({
   setGeolocationUnavailable: () => dispatch(setGeolocationUnavailable()),
   getWeather: (latitude, longitude) => dispatch(getWeather(latitude, longitude)),
   getPhotos: (latitude, longitude) => dispatch(getPhotos(latitude, longitude)),
-  getChatter: (latitude, longitude) => dispatch(getChatter(latitude, longitude))
+  getChatter: (latitude, longitude) => dispatch(getChatter(latitude, longitude)),
+  getVideos: (latitude, longitude) => dispatch(getVideos(latitude, longitude))
 });
 
 export default {

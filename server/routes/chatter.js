@@ -16,15 +16,12 @@ module.exports = app => {
       { q: "", geocode: `${latitude},${longitude},5km`, lang: "en", count: "4" },
       (error, result) => {
         if (error) {
-          res.send({ error });
+          res.status(500).send({ error });
         }
         if (result) {
           res.send(result);
         }
       }
     );
-  });
-  app.get("/api/*", (req, res) => {
-    res.redirect("/");
   });
 };

@@ -1,8 +1,8 @@
 import { SET_CHATTER } from "../actions/chatter";
 
-export const chatterReducerDefaultState = false;
+export const defaultState = false;
 
-export default (state = chatterReducerDefaultState, action) => {
+export default (state = defaultState, action) => {
   switch (action.type) {
     case SET_CHATTER:
       return action.chatter;

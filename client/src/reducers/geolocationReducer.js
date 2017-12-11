@@ -1,8 +1,8 @@
 import { SET_GEOLOCATION, SET_GEOLOCATION_UNAVAILABLE } from "../actions/geolocation";
 
-export const geolocationReducerDefaultState = false;
+export const defaultState = false;
 
-export default (state = geolocationReducerDefaultState, action) => {
+export default (state = defaultState, action) => {
   switch (action.type) {
     case SET_GEOLOCATION:
       return {

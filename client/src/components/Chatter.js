@@ -6,7 +6,9 @@ class Chatter extends React.Component {
   renderChatter = () => {
     const collection = this.props.chatter.collection;
     return collection.map(status => {
+      let originalStatus = {};
       if (status.retweeted_status) {
+        originalStatus = status;
         status = status.retweeted_status;
       }
       const { id, user: { screen_name } } = status;
@@ -14,10 +16,30 @@ class Chatter extends React.Component {
       return (
         <li key={id} className="chatter__status">
           <div className="chatter__text" dangerouslySetInnerHTML={{ __html: setupTweetText(status) }} />
-          <div className="status__username">
-            <a rel="external" href={getTwitterUserUrl(screen_name)} title={`Follow ${screen_name} on Twitter`}>
-              @{screen_name}
-            </a>
+          <div className="chatter__details">
+            {status.retweeted_status && (
+              <div className="status__rt">
+                RT /{" "}
+                <a
+                  rel="external"
+                  href={getTwitterUserUrl(originalStatus.user.screen_name)}
+                  title={`Follow ${originalStatus.user.screen_name} on Twitter`}
+                  target="_blank"
+                >
+                  @{screen_name}
+                </a>
+              </div>
+            )}
+            <div className="status__username">
+              <a
+                rel="external"
+                href={getTwitterUserUrl(screen_name)}
+                title={`Follow ${screen_name} on Twitter`}
+                target="_blank"
+              >
+                @{screen_name}
+              </a>
+            </div>
           </div>
         </li>
       );
@@ -39,7 +61,7 @@ class Chatter extends React.Component {
 
             {this.props.ready ? this.renderContent() : <Loading />}
 
-            <a rel="external" href="https://www.twitter.com/" className="section__attribution">
+            <a rel="external" href="https://www.twitter.com/" className="section__attribution" target="_blank">
               Powered by Twitter
             </a>
           </div>

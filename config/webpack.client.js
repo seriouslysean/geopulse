@@ -50,7 +50,7 @@ const config = {
   plugins: [
     new ExtractTextPlugin("bundle.css"),
     new webpack.DefinePlugin({
-      "process.env.GOOGLE_MAPS_API_KEY": JSON.stringify(process.env.GOOGLE_MAPS_API_KEY),
+      "process.env.GOOGLE_API_KEY": JSON.stringify(process.env.GOOGLE_API_KEY),
       "process.env.INSTAGRAM_API_TOKEN": JSON.stringify(process.env.INSTAGRAM_API_TOKEN),
       "process.env.WEATHER_UNDERGROUND_API_TOKEN": JSON.stringify(process.env.WEATHER_UNDERGROUND_API_TOKEN)
     })

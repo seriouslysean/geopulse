@@ -2,15 +2,15 @@ import axios from "axios";
 import config from "../../../config/config";
 
 export const getWeather = (latitude, longitude) => {
-  const weatherEndpoint = `https://api.wunderground.com/api/${
+  const endpoint = `https://api.wunderground.com/api/${
     config.WEATHER_UNDERGROUND_API_TOKEN
   }/conditions/q/${latitude},${longitude}.json`;
   return async dispatch => {
     try {
-      const weatherData = await axios(weatherEndpoint);
+      const data = await axios(endpoint);
       const {
         current_observation: { display_location: { city, state, country }, weather, temp_f, temp_c, icon, forecast_url }
-      } = weatherData.data;
+      } = data.data;
       return dispatch(
         setWeather({
           city,
@@ -24,7 +24,7 @@ export const getWeather = (latitude, longitude) => {
         })
       );
     } catch (e) {
-      console.log("Error fetching weather data", e);
+      console.log("Error fetching data", e);
     }
   };
 };

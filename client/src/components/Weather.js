@@ -44,7 +44,7 @@ class Weather extends React.Component {
 
             {this.props.ready ? this.renderContent() : <Loading />}
 
-            <a rel="external" href="https://www.wunderground.com/" className="section__attribution">
+            <a rel="external" href="https://www.wunderground.com/" className="section__attribution" target="_blank">
               Powered by Weather Underground
             </a>
           </div>
