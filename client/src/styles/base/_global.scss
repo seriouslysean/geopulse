@@ -15,18 +15,20 @@ body {
   position: relative;
   &:before,
   &:after {
-    display: block;
-    position: fixed;
-    top: -25%;
-    left: 0;
-    right: 0;
-    height: 25%;
-    background: $skyDark;
     content: "";
+    position: fixed;
+    top: -50%;
+    right: -50%;
+    bottom: 50%;
+    left: -50%;
+    z-index: -1;
+    background: $skyDark;
   }
   &:after {
-    top: auto;
-    bottom: -25%;
+    top: 50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
     background: $earthDarkest;
   }
 }
