@@ -7,8 +7,8 @@ function withPhotos(WrappedComponent) {
       ready: false
     };
     componentWillReceiveProps(nextProps) {
-      const { geolocation, photos } = nextProps;
-      if (!this.state.ready && geolocation && photos) {
+      const { photos } = nextProps;
+      if (!this.state.ready && photos) {
         this.setState(() => ({
           ready: true
         }));
@@ -22,8 +22,7 @@ function withPhotos(WrappedComponent) {
     }
   }
 
-  const mapStateToProps = ({ geolocation, photos }) => ({
-    geolocation,
+  const mapStateToProps = ({ photos }) => ({
     photos
   });
 

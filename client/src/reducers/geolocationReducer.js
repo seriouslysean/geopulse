@@ -1,4 +1,4 @@
-import { SET_GEOLOCATION } from "../actions/geolocation";
+import { SET_GEOLOCATION, SET_GEOLOCATION_UNAVAILABLE } from "../actions/geolocation";
 
 export const geolocationReducerDefaultState = false;
 
@@ -8,6 +8,10 @@ export default (state = geolocationReducerDefaultState, action) => {
       return {
         latitude: action.latitude,
         longitude: action.longitude
+      };
+    case SET_GEOLOCATION_UNAVAILABLE:
+      return {
+        unavailable: true
       };
     default:
       return state;

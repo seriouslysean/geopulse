@@ -4,21 +4,32 @@ import { connect } from "react-redux";
 function withGeolocation(WrappedComponent) {
   class HOC extends React.Component {
     state = {
-      ready: false
+      ready: false,
+      unavailable: false
     };
     componentWillReceiveProps(nextProps) {
       const { geolocation } = nextProps;
-      if (!this.state.ready && geolocation) {
+      if (!this.state.ready && geolocation.unavailable) {
         this.setState(() => ({
-          ready: true
+          unavailable: true
         }));
+      } else {
+        if (!this.state.ready && geolocation) {
+          this.setState(() => ({
+            ready: true
+          }));
+        }
       }
     }
     componentWillUpdate() {
-      return this.state.ready;
+      return this.state.ready || this.state.unavailable;
     }
     render() {
-      return <WrappedComponent {...this.props} ready={this.state.ready} />;
+      if (this.state.unavailable) {
+        return "";
+      } else {
+        return <WrappedComponent {...this.props} ready={this.state.ready} />;
+      }
     }
   }
 

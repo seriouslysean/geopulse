@@ -7,8 +7,8 @@ function withChatters(WrappedComponent) {
       ready: false
     };
     componentWillReceiveProps(nextProps) {
-      const { geolocation, chatter } = nextProps;
-      if (!this.state.ready && geolocation && chatter) {
+      const { chatter } = nextProps;
+      if (!this.state.ready && chatter) {
         this.setState(() => ({
           ready: true
         }));
@@ -22,8 +22,7 @@ function withChatters(WrappedComponent) {
     }
   }
 
-  const mapStateToProps = ({ geolocation, chatter }) => ({
-    geolocation,
+  const mapStateToProps = ({ chatter }) => ({
     chatter
   });
 

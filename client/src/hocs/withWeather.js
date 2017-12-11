@@ -7,8 +7,8 @@ function withWeather(WrappedComponent) {
       ready: false
     };
     componentWillReceiveProps(nextProps) {
-      const { geolocation, weather } = nextProps;
-      if (!this.state.ready && geolocation && weather) {
+      const { weather } = nextProps;
+      if (!this.state.ready && weather) {
         this.setState(() => ({
           ready: true
         }));
@@ -22,8 +22,7 @@ function withWeather(WrappedComponent) {
     }
   }
 
-  const mapStateToProps = ({ geolocation, weather }) => ({
-    geolocation,
+  const mapStateToProps = ({ weather }) => ({
     weather
   });
 

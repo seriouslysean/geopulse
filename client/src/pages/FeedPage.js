@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import config from "../../../config/config";
-import { getGeolocation } from "../actions/geolocation";
+import { getGeolocation, setGeolocationUnavailable } from "../actions/geolocation";
 import { getWeather } from "../actions/weather";
 import { getPhotos } from "../actions/photos";
 import { getChatter } from "../actions/chatter";
@@ -14,51 +14,78 @@ import Weather from "../components/Weather";
 import Photos from "../components/Photos";
 import Chatter from "../components/Chatter";
 import Videos from "../components/Videos";
+import Unavailable from "../components/Unavailable";
 
 const LocationWithGeolocation = withGeolocation(Location);
-const WeatherWithWeather = withWeather(Weather);
-const PhotosWithPhotos = withPhotos(Photos);
-const ChatterWithChatter = withChatter(Chatter);
+const WeatherWithWeather = withGeolocation(withWeather(Weather));
+const PhotosWithPhotos = withGeolocation(withPhotos(Photos));
+const ChatterWithChatter = withGeolocation(withChatter(Chatter));
 const VideosWithVideos = withGeolocation(Videos);
 
 class FeedPage extends React.Component {
+  state = {
+    unavailable: false
+  };
   componentDidMount() {
-    this.props.getGeolocation().then(location => {
-      const { latitude, longitude } = location;
-      this.props.getWeather(latitude, longitude);
-      this.props.getPhotos(latitude, longitude);
-      this.props.getChatter(latitude, longitude);
-    });
+    this.props
+      .getGeolocation()
+      .then(location => {
+        const { latitude, longitude } = location;
+        this.props.getWeather(latitude, longitude);
+        this.props.getPhotos(latitude, longitude);
+        this.props.getChatter(latitude, longitude);
+      })
+      .catch(() => {
+        this.props.setGeolocationUnavailable();
+      });
+  }
+  componentWillReceiveProps(nextProps) {
+    const { geolocation } = nextProps;
+    if (geolocation.unavailable) {
+      this.setState(() => ({
+        unavailable: true
+      }));
+    }
+  }
+  renderContent() {
+    return (
+      <div className="section-container">
+        <LocationWithGeolocation
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
+            config.GOOGLE_MAPS_API_KEY
+          }&v=3.exp&libraries=geometry,places`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `400px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
+        <WeatherWithWeather />
+        <PhotosWithPhotos />
+        <ChatterWithChatter />
+        <VideosWithVideos />
+      </div>
+    );
   }
   render() {
     return (
       <div className="page-feed">
-        <div className="page-feed">
-          <LocationWithGeolocation
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
-              config.GOOGLE_MAPS_API_KEY
-            }&v=3.exp&libraries=geometry,places`}
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `400px` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
-          />
-          <WeatherWithWeather />
-          <PhotosWithPhotos />
-          <ChatterWithChatter />
-          <VideosWithVideos />
-        </div>
+        <div className="page-content">{!this.state.unavailable ? this.renderContent() : <Unavailable />}</div>
       </div>
     );
   }
 }
 
+const mapStateToProps = state => ({
+  geolocation: state.geolocation
+});
+
 const mapDispatchToProps = dispatch => ({
   getGeolocation: () => dispatch(getGeolocation()),
+  setGeolocationUnavailable: () => dispatch(setGeolocationUnavailable()),
   getWeather: (latitude, longitude) => dispatch(getWeather(latitude, longitude)),
   getPhotos: (latitude, longitude) => dispatch(getPhotos(latitude, longitude)),
   getChatter: (latitude, longitude) => dispatch(getChatter(latitude, longitude))
 });
 
 export default {
-  component: connect(undefined, mapDispatchToProps)(FeedPage)
+  component: connect(mapStateToProps, mapDispatchToProps)(FeedPage)
 };

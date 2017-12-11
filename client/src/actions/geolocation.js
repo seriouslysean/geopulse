@@ -28,3 +28,8 @@ export const setGeolocation = (latitude = false, longitude = false) => ({
   latitude,
   longitude
 });
+
+export const SET_GEOLOCATION_UNAVAILABLE = "SET_GEOLOCATION_UNAVAILABLE";
+export const setGeolocationUnavailable = () => ({
+  type: SET_GEOLOCATION_UNAVAILABLE
+});
