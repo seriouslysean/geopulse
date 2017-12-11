@@ -1,0 +1,61 @@
+.header {
+}
+
+.header__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $spacingL 0;
+}
+
+.header__logo {
+  align-items: center;
+  color: white;
+  display: flex;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  @include media(">tablet") {
+    font-size: 4rem;
+  }
+  &:hover {
+    color: darken(white, 25%);
+  }
+  img {
+    display: block;
+    height: 3rem;
+    margin-right: $spacingS;
+    width: 3rem;
+    @include media(">tablet") {
+      height: 5rem;
+      width: 5rem;
+    }
+  }
+}
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin-left: $spacingS;
+  }
+}
+
+.header__link {
+  color: white;
+  &:hover {
+    color: darken(white, 25%);
+  }
+}
+
+.header__link--active {
+  font-weight: 600;
+}

@@ -1,4 +1,4 @@
-import shim from "../config/shim";
+import shim from "./shim";
 
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";

@@ -1,0 +1,58 @@
+.chatter {
+}
+
+.chatter__list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chatter__status {
+  background: rgba(white, 0.2);
+  color: white;
+  margin: 1rem 1rem $spacingL*1.5;
+  max-width: 40rem;
+  padding: $spacingL;
+  position: relative;
+  width: 100%;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50px;
+    border-width: 20px 0 0 20px;
+    border-style: solid;
+    border-color: rgba(white, 0.2) transparent;
+    display: block;
+    width: 0;
+  }
+  a {
+    color: white;
+  }
+  &:nth-child(even) {
+    margin-left: auto;
+    &:after {
+      left: auto;
+      right: 50px;
+      transform: scale(-1, 1);
+    }
+    .status__username {
+    }
+  }
+}
+
+.status__username {
+  display: flex;
+  margin-top: $spacingS;
+  a {
+    color: rgba(white, 0.6);
+    font-size: $fontS*0.75;
+    margin-left: auto;
+    &:hover {
+      color: white;
+    }
+  }
+}

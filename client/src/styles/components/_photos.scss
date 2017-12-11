@@ -1,0 +1,70 @@
+.photos {
+}
+
+.photos__grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.photos__photo {
+  width: calc(100% - 2rem);
+  margin: 0 1rem 2rem;
+  position: relative;
+  @include media("<desktop") {
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+  @include media(">tablet") {
+    width: calc(33.333333% - 2rem);
+    margin: 1rem;
+  }
+  a {
+    &:hover {
+      .photos__username {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.photos__image {
+  background: transparent none center center no-repeat;
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: auto;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  img {
+    display: none;
+  }
+}
+
+.photos__username {
+  background: rgba(black, 0.6);
+  bottom: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  opacity: 1;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s ease;
+  width: 100%;
+  @include media(">tablet") {
+    opacity: 0;
+  }
+  &:before {
+    content: "@";
+  }
+}

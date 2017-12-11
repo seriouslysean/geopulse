@@ -1,0 +1,17 @@
+.footer {
+  align-items: center;
+  color: lighten($earthDarkest, 50%);
+  display: flex;
+  font-size: 1.2rem;
+  height: 6rem;
+  justify-content: center;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.footer__link {
+  color: lighten($earthDarkest, 65%);
+  &:hover {
+    color: white;
+  }
+}

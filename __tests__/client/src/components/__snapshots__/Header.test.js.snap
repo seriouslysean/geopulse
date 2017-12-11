@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<header
+  className="section section--bg-sky-dark header"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="header__content"
+    >
+      <Link
+        className="header__logo"
+        replace={false}
+        to="/"
+      >
+        <span>
+          <img
+            alt="Geopulse logo"
+            src="./assets/logo-geopulse.svg"
+          />
+        </span>
+        <span>
+          Geopulse
+        </span>
+      </Link>
+      <nav
+        className="header__navigation"
+      >
+        <ul>
+          <li>
+            <NavLink
+              activeClassName="header__link--active"
+              ariaCurrent="true"
+              className="header__link"
+              exact={true}
+              to="/"
+            >
+              Feed
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              activeClassName="header__link--active"
+              ariaCurrent="true"
+              className="header__link"
+              to="/about"
+            >
+              About
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+`;

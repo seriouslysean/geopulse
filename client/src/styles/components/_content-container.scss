@@ -1,0 +1,17 @@
+.content-container {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 0 $spacingS;
+  width: 100%;
+  @include media(">tablet") {
+    padding: 0 $spacingM;
+  }
+}
+
+.content-container--grid-spacing {
+  max-width: 82rem;
+  padding: 0;
+  @include media(">tablet") {
+    padding: 0 $spacingM;
+  }
+}

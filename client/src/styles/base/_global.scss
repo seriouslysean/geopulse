@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $skyLight;
+  color: white;
+  font-family: $fontBody;
+  font-size: $fontM;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $fontHeadings;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+[class^="page-"] {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  section {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+
+a {
+  color: $greyDark;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    color: lighten($greyDark, 20%);
+  }
+}

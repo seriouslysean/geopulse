@@ -1,59 +1,67 @@
 {
-  "name": "geopulse",
-  "description": "",
-  "version": "0.1.0",
-  "repository": "git@github.com:seriouslysean/geopulse.git",
+  "name": "geopulse-app",
+  "version": "1.0.0",
+  "description": "Get a pulse of what's happening at your current location.",
   "author": "Sean Kennedy <sean@codeserious.com>",
+  "license": "MIT",
+  "private": true,
   "engines": {
     "node": "8.x.x",
     "npm": "5.x.x",
     "yarn": "1.x.x"
   },
   "scripts": {
-    "build:dev": "webpack",
-    "build:prod": "webpack -p --env production",
-    "dev": "webpack-dev-server",
+    "dev": "NODE_ENV=development concurrently \"yarn dev:server\" \"yarn dev:build-server\" \"yarn dev:build-client\"",
+    "dev:server": "nodemon --watch server/build --exec \"yarn start\"",
+    "dev:build-server": "yarn build:server --watch",
+    "dev:build-client": "yarn build:client --watch",
+    "build:server": "webpack --config config/webpack.server.js",
+    "build:client": "webpack --config config/webpack.client.js",
+    "start": "node server.js",
     "test": "jest --colors",
-    "start": "node server/server.js",
-    "tunnel": "lt -p 3000 -s geopulseapp",
-    "heroku-postbuild": "yarn build:prod"
-  },
-  "jest": {
-    "setupFiles": ["<rootDir>/config/setupTests.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "heroku-postbuild": "yarn build:server && yarn build:client"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "0.16.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-generator-functions": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "compression": "1.7.0",
+    "concurrently": "3.5.0",
     "css-loader": "^0.28.7",
     "dotenv": "^4.0.0",
-    "express": "^4.16.2",
+    "express": "4.15.4",
+    "express-http-proxy": "1.0.6",
     "extract-text-webpack-plugin": "^3.0.2",
-    "history": "^4.7.2",
     "include-media": "^1.4.9",
+    "lodash": "4.17.4",
     "node-sass": "^4.7.2",
+    "node-twitter": "^0.5.3",
+    "nodemon": "1.12.0",
     "normalize.css": "^7.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
     "react-google-maps": "^9.4.2",
-    "react-redux": "^5.0.6",
+    "react-helmet": "5.2.0",
+    "react-redux": "5.0.6",
     "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
+    "react-router-config": "1.0.0-beta.4",
+    "react-router-dom": "4.2.2",
+    "redux": "3.7.2",
+    "redux-thunk": "2.2.0",
     "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.0",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "serialize-javascript": "1.4.0",
+    "webpack": "3.5.6",
+    "webpack-dev-server": "2.8.2",
+    "webpack-merge": "4.1.0",
+    "webpack-node-externals": "1.6.0"
   },
-  "license": "MIT",
   "devDependencies": {
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
@@ -62,5 +70,13 @@
     "jest": "^21.2.1",
     "localtunnel": "^1.8.3",
     "react-test-renderer": "^16.2.0"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/config/setupTests.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
