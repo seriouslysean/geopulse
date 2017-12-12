@@ -13,8 +13,6 @@ import "./styles/styles.scss";
 import AppRoutes from "./routes/AppRoutes";
 import reducers from "./reducers";
 
-console.log(config);
-
 if (config.GOOGLE_TRACKING_ID && process.env.NODE_ENV === "production") {
   ReactGA.initialize(config.GOOGLE_TRACKING_ID);
   ReactGA.pageview(window.location.pathname + window.location.search);
