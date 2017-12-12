@@ -1,0 +1,18 @@
+.loading {
+  min-height: 25vh;
+  display: flex;
+}
+
+.loading__icon {
+  animation: spin 8s linear infinite;
+  background: transparent none center center no-repeat;
+  background-size: 6rem;
+  flex: 1 0 100%;
+  opacity: 0.4;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -21,7 +21,7 @@ class Chatter extends React.Component {
           <div className="chatter__content">
             <h1 className="section__title">Chatter</h1>
 
-            {this.props.ready ? this.renderContent() : <Loading />}
+            {this.props.ready || this.props.chatter ? this.renderContent() : <Loading />}
 
             <a rel="external" href="https://www.twitter.com/" className="section__attribution" target="_blank">
               Powered by Twitter

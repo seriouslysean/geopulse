@@ -21,7 +21,7 @@ class Videos extends React.Component {
           <div className="videos__content">
             <h1 className="section__title">Videos</h1>
 
-            {this.props.ready ? this.renderContent() : <Loading />}
+            {this.props.ready || this.props.videos ? this.renderContent() : <Loading />}
 
             <a rel="external" href="https://www.youtube.com/" className="section__attribution" target="_blank">
               Powered by YouTube

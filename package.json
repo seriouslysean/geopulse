@@ -6,8 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev":
-      "yarn build && NODE_ENV=development concurrently \"yarn dev:server\" \"yarn dev:build-server\" \"yarn dev:build-client\"",
+    "dev": "yarn build && NODE_ENV=development concurrently \"yarn dev:server\" \"yarn dev:build-server\" \"yarn dev:build-client\"",
     "dev:server": "nodemon --watch server/build --exec \"yarn start\"",
     "dev:build-server": "yarn build:server --watch",
     "dev:build-client": "yarn build:client --watch",
@@ -44,6 +43,7 @@
     "normalize.css": "^7.0.0",
     "react": "16.0.0",
     "react-dom": "16.0.0",
+    "react-ga": "^2.3.5",
     "react-google-maps": "^9.4.2",
     "react-helmet": "5.2.0",
     "react-redux": "5.0.6",
@@ -63,14 +63,19 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
-    "image-webpack-loader": "^3.4.2",
     "jest": "^21.2.1",
     "localtunnel": "^1.8.3",
     "react-test-renderer": "^16.2.0"
   },
   "jest": {
-    "setupFiles": ["<rootDir>/config/jest.setup.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "testMatch": ["<rootDir>/client/tests/**/*.test.js"]
+    "setupFiles": [
+      "<rootDir>/config/jest.setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testMatch": [
+      "<rootDir>/client/tests/**/*.test.js"
+    ]
   }
 }

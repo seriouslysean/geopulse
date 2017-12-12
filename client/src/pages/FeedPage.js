@@ -29,18 +29,20 @@ export class FeedPage extends React.Component {
     unavailable: false
   };
   componentDidMount() {
-    this.props
-      .getGeolocation()
-      .then(location => {
-        const { latitude, longitude } = location;
-        this.props.getWeather(latitude, longitude);
-        this.props.getPhotos(latitude, longitude);
-        this.props.getChatter(latitude, longitude);
-        this.props.getVideos(latitude, longitude);
-      })
-      .catch(() => {
-        this.props.setGeolocationUnavailable();
-      });
+    if (!this.props.geolocation) {
+      this.props
+        .getGeolocation()
+        .then(location => {
+          const { latitude, longitude } = location;
+          this.props.getWeather(latitude, longitude);
+          this.props.getPhotos(latitude, longitude);
+          this.props.getChatter(latitude, longitude);
+          this.props.getVideos(latitude, longitude);
+        })
+        .catch(() => {
+          this.props.setGeolocationUnavailable();
+        });
+    }
   }
   componentWillReceiveProps(nextProps) {
     const { geolocation } = nextProps;

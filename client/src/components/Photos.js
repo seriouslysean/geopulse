@@ -21,7 +21,7 @@ class Photos extends React.Component {
           <div className="photos__content">
             <h1 className="section__title">Photos</h1>
 
-            {this.props.ready ? this.renderContent() : <Loading />}
+            {this.props.ready || this.props.photos ? this.renderContent() : <Loading />}
 
             <a rel="external" href="https://www.instagram.com/" className="section__attribution" target="_blank">
               Powered by Instagram

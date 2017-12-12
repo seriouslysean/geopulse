@@ -12,20 +12,29 @@ Goal of the project, features, etc. [View the demo on Heroku](https://geopulse-a
 1. Run `yarn && yarn dev`
 1. Open `http://localhost:3000` in your browser
 
+### Tests
+
+1. Run `yarn test` to run tests once
+1. Run `yarn test --watch` to automatically run when a test file changes
+
 ## Workflow
 
 1. Hit the landing page
 1. Prompt user to share location via browser
-   * Yes, loading content
-   * No, geolocate user by IP
-     * Success, load content
-     * Failure, show error
-1. Start loading content with Longitude + Latitude
-   * Map
-   * Weather
-   * Instagram
-   * Twitter
-   * Youtube
+   * Yes, load content
+   * No, show geolocation unavailable screen
+1. Start loading content with Longitude + Latitude. Show loading animation until ready
+   * Map ([Google Maps](https://developers.google.com/maps/))
+   * Visual of your approximate current location
+   * Weather ([Weather Underground](https://www.wunderground.com/weather/api/))
+     * Current weather based on latitude + longitude
+   * Photos ([Instagram](https://www.instagram.com/developer/))
+     * Up to 6 photos posted within 5km of latitude + longitude
+     * Note: this will only work with Instagram accounts added to the sandbox application.
+   * Chatter ([Twitter](https://developer.twitter.com/))
+     * Up to 4 tweets posted within 5km of latitude + longitude
+   * Videos ([YouTube](https://developers.google.com/youtube/))
+     * Up to 4 videos posted within 5km of latitude + longitude
 
 ## Roadmap
 

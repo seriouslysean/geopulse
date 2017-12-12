@@ -37,13 +37,6 @@ const config = {
             }
           ]
         })
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          "file-loader?hash=sha512&digest=hex&name=[hash].[ext]",
-          "image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false"
-        ]
       }
     ]
   },
@@ -51,6 +44,7 @@ const config = {
     new ExtractTextPlugin("bundle.css"),
     new webpack.DefinePlugin({
       "process.env.GOOGLE_API_KEY": JSON.stringify(process.env.GOOGLE_API_KEY),
+      "process.env.GOOGLE_TRACKING_ID": JSON.stringify(process.env.GOOGLE_TRACKING_ID),
       "process.env.INSTAGRAM_API_TOKEN": JSON.stringify(process.env.INSTAGRAM_API_TOKEN),
       "process.env.WEATHER_UNDERGROUND_API_TOKEN": JSON.stringify(process.env.WEATHER_UNDERGROUND_API_TOKEN)
     })
