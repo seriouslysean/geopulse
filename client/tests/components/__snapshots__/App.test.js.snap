@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render App correctly 1`] = `
+<div
+  className="app"
+>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Geopulse
+    </title>
+    <meta
+      content="Geopulse"
+      property="og:title"
+    />
+  </HelmetWrapper>
+  <Header />
+  <Footer />
+</div>
+`;

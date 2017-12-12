@@ -1,6 +1,6 @@
 import React from "react";
 
-const AboutPage = () => (
+export const AboutPage = () => (
   <div className="page-about">
     <div className="page-content">
       <section className="section section--spacing section--bg-sky-light">

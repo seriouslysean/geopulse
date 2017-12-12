@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Chatter correctly 1`] = `
+<section
+  className="section section--spacing section--bg-earth-dark chatter"
+>
+  <div
+    className="content-container content-container--grid-spacing"
+  >
+    <div
+      className="chatter__content"
+    >
+      <h1
+        className="section__title"
+      >
+        Chatter
+      </h1>
+      <Loading />
+      <a
+        className="section__attribution"
+        href="https://www.twitter.com/"
+        rel="external"
+        target="_blank"
+      >
+        Powered by Twitter
+      </a>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`should render Chatter with content correctly 1`] = `
+<section
+  className="section section--spacing section--bg-earth-dark chatter"
+>
+  <div
+    className="content-container content-container--grid-spacing"
+  >
+    <div
+      className="chatter__content"
+    >
+      <h1
+        className="section__title"
+      >
+        Chatter
+      </h1>
+      <Loading />
+      <a
+        className="section__attribution"
+        href="https://www.twitter.com/"
+        rel="external"
+        target="_blank"
+      >
+        Powered by Twitter
+      </a>
+    </div>
+  </div>
+</section>
+`;

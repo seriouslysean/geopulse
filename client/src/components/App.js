@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const App = ({ route }) => {
+export const App = ({ route }) => {
   return (
     <div className="app">
       <Helmet>

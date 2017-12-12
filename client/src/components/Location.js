@@ -1,6 +1,6 @@
 import React from "react";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
-import setupMap from "../../../config/setupMap";
+import googleMapStyles from "../../../config/googlemaps.style";
 import Loading from "../components/Loading";
 
 class Location extends React.Component {
@@ -27,7 +27,7 @@ class Location extends React.Component {
             scaleControl: false,
             scrollwheel: false,
             streetViewControl: false,
-            styles: setupMap,
+            styles: googleMapStyles,
             zoomControl: false
           }}
         />

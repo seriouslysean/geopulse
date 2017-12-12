@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Photos correctly 1`] = `
+<section
+  className="section section--spacing section--bg-earth-medium photos"
+>
+  <div
+    className="content-container content-container--grid-spacing"
+  >
+    <div
+      className="photos__content"
+    >
+      <h1
+        className="section__title"
+      >
+        Photos
+      </h1>
+      <Loading />
+      <a
+        className="section__attribution"
+        href="https://www.instagram.com/"
+        rel="external"
+        target="_blank"
+      >
+        Powered by Instagram
+      </a>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`should render Photos with content correctly 1`] = `
+<section
+  className="section section--spacing section--bg-earth-medium photos"
+>
+  <div
+    className="content-container content-container--grid-spacing"
+  >
+    <div
+      className="photos__content"
+    >
+      <h1
+        className="section__title"
+      >
+        Photos
+      </h1>
+      <Loading />
+      <a
+        className="section__attribution"
+        href="https://www.instagram.com/"
+        rel="external"
+        target="_blank"
+      >
+        Powered by Instagram
+      </a>
+    </div>
+  </div>
+</section>
+`;

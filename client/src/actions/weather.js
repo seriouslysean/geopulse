@@ -8,21 +8,8 @@ export const getWeather = (latitude, longitude) => {
   return async dispatch => {
     try {
       const data = await axios(endpoint);
-      const {
-        current_observation: { display_location: { city, state, country }, weather, temp_f, temp_c, icon, forecast_url }
-      } = data.data;
-      return dispatch(
-        setWeather({
-          city,
-          state,
-          country,
-          weather,
-          temp_f,
-          temp_c,
-          icon,
-          forecast_url
-        })
-      );
+      const weather = data.data.current_observation;
+      return dispatch(setWeather(weather));
     } catch (e) {
       console.log("Error fetching data", e);
     }
@@ -31,23 +18,7 @@ export const getWeather = (latitude, longitude) => {
 
 export const SET_WEATHER = "SET_WEATHER";
 
-export const setWeather = ({
-  city = "",
-  state = "",
-  country = "",
-  weather = "",
-  temp_f = "",
-  temp_c = "",
-  icon = "",
-  forecast_url = ""
-}) => ({
+export const setWeather = weather => ({
   type: SET_WEATHER,
-  city,
-  state,
-  country,
-  weather,
-  temp_f,
-  temp_c,
-  icon,
-  forecast_url
+  weather
 });

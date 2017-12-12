@@ -1,6 +1,6 @@
 import React from "react";
 
-const NotFoundPage = () => (
+export const NotFoundPage = () => (
   <div className="page-not-found">
     <div className="page-content">
       <section className="section section--spacing section--bg-sky-light">

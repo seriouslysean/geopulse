@@ -24,7 +24,7 @@ const PhotosWithPhotos = withGeolocation(withPhotos(Photos));
 const ChatterWithChatter = withGeolocation(withChatter(Chatter));
 const VideosWithVideos = withGeolocation(withVideos(Videos));
 
-class FeedPage extends React.Component {
+export class FeedPage extends React.Component {
   state = {
     unavailable: false
   };

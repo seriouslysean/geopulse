@@ -12,7 +12,14 @@ class Weather extends React.Component {
     }));
   };
   renderContent = () => {
-    const { city, state, country, weather, temp_f, temp_c, icon, forecast_url } = this.props.weather;
+    const {
+      display_location: { city, state, country },
+      weather,
+      temp_f,
+      temp_c,
+      icon,
+      forecast_url
+    } = this.props.weather;
     return (
       <div className="content">
         <div

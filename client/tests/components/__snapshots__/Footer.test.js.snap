@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Footer correctly 1`] = `
+<footer
+  className="section section--bg-earth-darkest footer"
+>
+  <div
+    className="content-container"
+  >
+    <p>
+      Crafted with love /
+       
+      <a
+        className="footer__link"
+        href="https://www.codeserious.com"
+        rel="external"
+      >
+        Code Serious
+      </a>
+    </p>
+  </div>
+</footer>
+`;

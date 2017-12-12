@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render FeedPage correctly 1`] = `
+<div
+  className="page-feed"
+>
+  <div
+    className="page-content"
+  >
+    <div
+      className="section-container"
+    >
+      <Connect(HOC)
+        containerElement={
+          <div
+            style={
+              Object {
+                "height": "400px",
+              }
+            }
+          />
+        }
+        googleMapURL="https://maps.googleapis.com/maps/api/js?key=undefined&v=3.exp&libraries=geometry,places"
+        loadingElement={
+          <div
+            style={
+              Object {
+                "height": "100%",
+              }
+            }
+          />
+        }
+        mapElement={
+          <div
+            style={
+              Object {
+                "height": "100%",
+              }
+            }
+          />
+        }
+      />
+      <Connect(HOC) />
+      <Connect(HOC) />
+      <Connect(HOC) />
+      <Connect(HOC) />
+    </div>
+  </div>
+</div>
+`;
