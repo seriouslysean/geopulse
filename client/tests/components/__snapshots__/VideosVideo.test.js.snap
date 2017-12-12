@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render VideosVideo with content correctly 1`] = `
+<li
+  className="videos__video"
+>
+  <a
+    href="https://www.youtube.com/watch?v=2BsRw8wFjyI"
+    rel="external"
+    target="_blank"
+  >
+    <div
+      className="videos__image"
+      style={
+        Object {
+          "backgroundImage": "url(https://i.ytimg.com/vi/2BsRw8wFjyI/hqdefault.jpg)",
+        }
+      }
+    >
+      <img
+        alt="At Strawberry Mansion High, There's Fear, Hope"
+        height={480}
+        src="https://i.ytimg.com/vi/2BsRw8wFjyI/hqdefault.jpg"
+        width={480}
+      />
+    </div>
+    <div
+      className="videos__title"
+    >
+      At Strawberry Mansion High, There's Fear, Hope
+    </div>
+  </a>
+</li>
+`;

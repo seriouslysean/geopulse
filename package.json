@@ -6,15 +6,17 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development concurrently \"yarn dev:server\" \"yarn dev:build-server\" \"yarn dev:build-client\"",
+    "dev":
+      "yarn build && NODE_ENV=development concurrently \"yarn dev:server\" \"yarn dev:build-server\" \"yarn dev:build-client\"",
     "dev:server": "nodemon --watch server/build --exec \"yarn start\"",
     "dev:build-server": "yarn build:server --watch",
     "dev:build-client": "yarn build:client --watch",
+    "build": "yarn build:server && yarn build:client",
     "build:server": "webpack --config config/webpack.server.js",
     "build:client": "webpack --config config/webpack.client.js",
     "start": "node server.js",
     "test": "jest --colors",
-    "heroku-postbuild": "yarn build:server && yarn build:client"
+    "heroku-postbuild": "yarn build"
   },
   "dependencies": {
     "axios": "0.16.2",

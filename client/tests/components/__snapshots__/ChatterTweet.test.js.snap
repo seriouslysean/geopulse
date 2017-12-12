@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ChatterTweet with content correctly 1`] = `
+<li
+  className="chatter__status"
+>
+  <div
+    className="chatter__text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "curiosity left a trail",
+      }
+    }
+  />
+  <div
+    className="chatter__details"
+  >
+    <div
+      className="status__username"
+    >
+      <a
+        href="https://www.twitter.com/RyshonJones"
+        rel="external"
+        target="_blank"
+        title="Follow RyshonJones on Twitter"
+      >
+        @
+        RyshonJones
+      </a>
+    </div>
+  </div>
+</li>
+`;

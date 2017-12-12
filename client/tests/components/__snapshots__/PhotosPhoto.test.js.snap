@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PhotosPhoto with content correctly 1`] = `
+<li
+  className="photos__photo"
+>
+  <a
+    href="https://www.instagram.com/p/BckAiH6lMsI/"
+    rel="external"
+    title="It’s getting extra Christmasy this morning, hahaha. #🎄 #captaincrunch"
+  >
+    <div
+      className="photos__image"
+      style={
+        Object {
+          "backgroundImage": "url(https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/25012870_1945812425670287_2388775529164570624_n.jpg)",
+        }
+      }
+    >
+      <img
+        alt="It’s getting extra Christmasy this morning, hahaha. #🎄 #captaincrunch"
+        height={640}
+        src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/25012870_1945812425670287_2388775529164570624_n.jpg"
+        width={640}
+      />
+    </div>
+    <div
+      className="photos__username"
+    >
+      seriouslysean
+    </div>
+  </a>
+</li>
+`;
