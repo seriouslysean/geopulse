@@ -4,8 +4,13 @@ exports[`should render Loading correctly 1`] = `
 <div
   className="loading"
 >
-  <p>
-    Loading...
-  </p>
+  <div
+    className="loading__icon"
+    style={
+      Object {
+        "backgroundImage": "url(./assets/loading.svg)",
+      }
+    }
+  />
 </div>
 `;
