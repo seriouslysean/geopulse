@@ -5,4 +5,4 @@ node_modules
 
 # Bundles
 client/public/bundle.*
-server/build/bundle.js
+server/build/bundle.*
