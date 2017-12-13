@@ -4,16 +4,18 @@ import PhotosPhoto from "./PhotosPhoto";
 
 class Photos extends React.Component {
   renderPhotos = () => {
-    return this.props.photos.collection.map(photo => {
-      return <PhotosPhoto key={photo.id} photo={photo} />;
-    });
+    return (
+      <ul className="photos__grid">
+        {this.props.photos.collection.map(photo => {
+          return <PhotosPhoto key={photo.id} photo={photo} />;
+        })}
+      </ul>
+    );
   };
   renderContent = () => {
     return (
       <div className="content">
-        <ul className="photos__grid">
-          {this.props.photos.collection.length ? this.renderPhotos() : <p>No photos found</p>}
-        </ul>
+        {this.props.photos.collection.length ? this.renderPhotos() : <p className="text--center">No photos found</p>}
       </div>
     );
   };

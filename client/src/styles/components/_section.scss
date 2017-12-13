@@ -1,8 +1,12 @@
 .section {
   position: relative;
   .content {
+    margin-bottom: $spacingS;
     position: relative;
     z-index: 1;
+    @include media(">tablet") {
+      margin-bottom: $spacingL;
+    }
   }
 }
 

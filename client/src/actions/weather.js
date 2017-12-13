@@ -9,7 +9,7 @@ export const getWeather = (latitude, longitude) => {
   return async dispatch => {
     try {
       const data = await axios(endpoint);
-      const weather = data.data.current_observation;
+      const weather = data.data.current_observation || data.data.response;
       return dispatch(setWeather(weather));
     } catch (e) {
       console.error("Error fetching data", e);

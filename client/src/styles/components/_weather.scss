@@ -1,11 +1,12 @@
 .weather {
-  .content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    @include media(">tablet") {
-      flex-direction: row;
-    }
+}
+
+.weather__data {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @include media(">tablet") {
+    flex-direction: row;
   }
 }
 

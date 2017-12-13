@@ -3,14 +3,19 @@ import Loading from "./Loading";
 import ChatterTweet from "./ChatterTweet";
 
 class Chatter extends React.Component {
+  renderChatter = () => {
+    return (
+      <ul className="chatter__list">
+        {this.props.chatter.collection.map(status => {
+          return <ChatterTweet key={status.id} tweet={status} />;
+        })}
+      </ul>
+    );
+  };
   renderContent = () => {
     return (
       <div className="content">
-        <ul className="chatter__list">
-          {this.props.chatter.collection.map(status => {
-            return <ChatterTweet key={status.id} tweet={status} />;
-          })}
-        </ul>
+        {this.props.chatter.collection.length ? this.renderChatter() : <p className="text--center">No chatter found</p>}
       </div>
     );
   };

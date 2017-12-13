@@ -11,7 +11,7 @@ class Weather extends React.Component {
       showFarenheit: !prevState.showFarenheit
     }));
   };
-  renderContent = () => {
+  renderWeather = () => {
     const {
       display_location: { city, state, country },
       weather,
@@ -21,7 +21,7 @@ class Weather extends React.Component {
       forecast_url
     } = this.props.weather;
     return (
-      <div className="content">
+      <div className="weather__data">
         <div
           className={`weather__temperature ${
             this.state.showFarenheit ? "weather__temperature--f" : "weather__temperature--c"
@@ -39,6 +39,18 @@ class Weather extends React.Component {
             {city}, {state} / {country}
           </p>
         </div>
+      </div>
+    );
+  };
+  renderContent = () => {
+    console.log(this.props.weather);
+    return (
+      <div className="content">
+        {!this.props.weather.hasOwnProperty("error") ? (
+          this.renderWeather()
+        ) : (
+          <p className="text--center">No weather data found</p>
+        )}
       </div>
     );
   };
