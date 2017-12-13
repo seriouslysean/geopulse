@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 function withGeolocation(WrappedComponent) {
   class HOC extends React.Component {
     state = {
-      ready: false,
+      ready: this.props.geolocation,
       unavailable: false
     };
     componentWillReceiveProps(nextProps) {

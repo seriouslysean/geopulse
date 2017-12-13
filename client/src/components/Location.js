@@ -38,7 +38,7 @@ class Location extends React.Component {
     return (
       <section className="section section--bg-sky-light location">
         <div className="location__content">
-          {this.props.ready || this.props.geolocation ? this.renderContent() : <Loading />}
+          {this.props.ready && this.props.geolocation ? this.renderContent() : <Loading />}
         </div>
       </section>
     );

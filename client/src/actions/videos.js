@@ -1,5 +1,6 @@
 import axios from "axios";
 import config from "../../../config/config";
+import { defaultState } from "../reducers/videosReducer";
 
 export const getVideos = (latitude, longitude) => {
   const endpoint = `https://www.googleapis.com/youtube/v3/search?key=${
@@ -21,7 +22,7 @@ export const getVideos = (latitude, longitude) => {
 };
 
 export const SET_VIDEOS = "SET_VIDEOS";
-export const setVideos = videos => ({
+export const setVideos = (videos = defaultState) => ({
   type: SET_VIDEOS,
   videos
 });

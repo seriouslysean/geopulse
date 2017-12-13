@@ -1,5 +1,6 @@
 import axios from "axios";
 import config from "../../../config/config";
+import { defaultState } from "../reducers/photosReducer";
 
 export const getPhotos = (latitude, longitude) => {
   const photosEndpoint = `https://api.instagram.com/v1/media/search?access_token=${
@@ -25,7 +26,7 @@ export const getPhotos = (latitude, longitude) => {
 };
 
 export const SET_PHOTOS = "SET_PHOTOS";
-export const setPhotos = photos => ({
+export const setPhotos = (photos = defaultState) => ({
   type: SET_PHOTOS,
   photos
 });

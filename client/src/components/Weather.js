@@ -49,7 +49,7 @@ class Weather extends React.Component {
           <div className="weather__content">
             <h1 className="section__title">Weather</h1>
 
-            {this.props.ready || this.props.weather ? this.renderContent() : <Loading />}
+            {this.props.ready && this.props.weather ? this.renderContent() : <Loading />}
 
             <a rel="external" href="https://www.wunderground.com/" className="section__attribution" target="_blank">
               Powered by Weather Underground

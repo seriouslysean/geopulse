@@ -29,7 +29,8 @@ const VideosWithVideos = withGeolocation(withVideos(Videos));
 
 export class FeedPage extends React.Component {
   state = {
-    unavailable: false
+    unavailable: false,
+    isAccurate: false
   };
   refreshData = geolocation => {
     const { latitude, longitude } = geolocation;
@@ -47,6 +48,11 @@ export class FeedPage extends React.Component {
     }
     if (geolocation && !_.isEqual(this.props.geolocation, geolocation)) {
       this.refreshData(geolocation);
+      if (geolocation.accurate) {
+        this.setState(() => ({
+          isAccurate: true
+        }));
+      }
     }
   }
   componentDidMount() {
@@ -65,7 +71,7 @@ export class FeedPage extends React.Component {
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
-        <AccuracyWithGeolocation />
+        {!this.state.isAccurate && <AccuracyWithGeolocation />}
         <WeatherWithWeather />
         <PhotosWithPhotos />
         <ChatterWithChatter />

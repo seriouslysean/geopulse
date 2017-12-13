@@ -44,7 +44,7 @@ class Accuracy extends React.Component {
           <div className="accuracy__content">
             <h1 className="section__title">Accuracy</h1>
 
-            {this.props.ready || this.props.geolocation ? this.renderContent() : <Loading />}
+            {this.props.ready && this.props.geolocation ? this.renderContent() : <Loading />}
           </div>
         </div>
       </section>
