@@ -19,37 +19,41 @@ exports[`should render Weather with content correctly 1`] = `
         className="content"
       >
         <div
-          className="weather__temperature weather__temperature--f"
-          onClick={[Function]}
+          className="weather__data"
         >
-          <h2>
-            <span
-              className="temp temp--f"
-            >
-              46.2
-              °F
-            </span>
-            <span
-              className="temp temp--c"
-            >
-              7.9
-              °C
-            </span>
-          </h2>
-        </div>
-        <div
-          className="weather__details"
-        >
-          <h3>
-            Overcast
-          </h3>
-          <p>
-            Queen Village
-            , 
-            PA
-             / 
-            US
-          </p>
+          <div
+            className="weather__temperature weather__temperature--f"
+            onClick={[Function]}
+          >
+            <h2>
+              <span
+                className="temp temp--f"
+              >
+                46.2
+                °F
+              </span>
+              <span
+                className="temp temp--c"
+              >
+                7.9
+                °C
+              </span>
+            </h2>
+          </div>
+          <div
+            className="weather__details"
+          >
+            <h3>
+              Overcast
+            </h3>
+            <p>
+              Queen Village
+              , 
+              PA
+               / 
+              US
+            </p>
+          </div>
         </div>
       </div>
       <a

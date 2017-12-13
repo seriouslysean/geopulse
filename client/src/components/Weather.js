@@ -43,7 +43,6 @@ class Weather extends React.Component {
     );
   };
   renderContent = () => {
-    console.log(this.props.weather);
     return (
       <div className="content">
         {!this.props.weather.hasOwnProperty("error") ? (
