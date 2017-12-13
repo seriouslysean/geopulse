@@ -1,11 +1,8 @@
 import axios from "axios";
 
 let axiosInstance = axios;
-
-if (process.env.NODE_ENV === "development") {
-  axiosInstance = axios.create({
-    baseURL: `http://localhost:3000`
-  });
-}
+axiosInstance = axios.create({
+  baseURL: process.env.BASE_URL
+});
 
 export default axiosInstance;

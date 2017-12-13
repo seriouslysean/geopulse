@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Accuracy correctly 1`] = `
+<section
+  className="section section--spacing section--bg-sky-light accuracy"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="accuracy__content"
+    >
+      <h1
+        className="section__title"
+      >
+        Accuracy
+      </h1>
+      <div
+        className="content"
+      >
+        <p
+          className="accuracy__intro"
+        >
+          Your location has been approximated using your IP address. If you'd like to improve the accuracy, please click the button below.
+        </p>
+        <button
+          className="button accuracy__button"
+          onClick={[Function]}
+        >
+          Improve Accuracy
+        </button>
+        <div
+          className="accuracy_geolocation"
+        >
+          39.9339456
+           / 
+          -75.1548441
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`should show Accuracy loading correctly 1`] = `
+<section
+  className="section section--spacing section--bg-sky-light accuracy"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="accuracy__content"
+    >
+      <h1
+        className="section__title"
+      >
+        Accuracy
+      </h1>
+      <Loading />
+    </div>
+  </div>
+</section>
+`;

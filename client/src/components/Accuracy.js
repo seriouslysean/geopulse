@@ -7,7 +7,7 @@ import { getChatter, setChatter } from "../actions/chatter";
 import { getVideos, setVideos } from "../actions/videos";
 import Loading from "../components/Loading";
 
-class Accuracy extends React.Component {
+export class Accuracy extends React.Component {
   handleImproveAccuracy = e => {
     this.props
       .resetGeolocation()
