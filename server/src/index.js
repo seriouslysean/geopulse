@@ -28,10 +28,6 @@ require("../routes/geolocation")(app);
 
 app.get("*", (req, res) => {
   const clientIp = getOriginIp(req);
-  if (clientIp) {
-    app.set("geopulseClientIp", clientIp);
-  }
-
   const store = createStore(req);
 
   const promises = matchRoutes(Routes, req.path)

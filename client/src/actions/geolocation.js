@@ -1,8 +1,8 @@
 import axiosInstance from "../helpers/axiosInstance";
 import { defaultState } from "../reducers/geolocationReducer";
 
-export const getIpGeoLocation = () => {
-  const endpoint = "/api/geolocation";
+export const getIpGeoLocation = (clientIp = false) => {
+  const endpoint = `/api/geolocation/${clientIp}`;
   return async dispatch => {
     try {
       const data = await axiosInstance.get(endpoint);

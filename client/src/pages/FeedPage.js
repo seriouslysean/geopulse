@@ -101,6 +101,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default {
-  loadData: ({ dispatch }) => dispatch(getIpGeoLocation()),
+  loadData: ({ dispatch, clientIp }) => dispatch(getIpGeoLocation(clientIp)),
   component: connect(mapStateToProps, mapDispatchToProps)(FeedPage)
 };
