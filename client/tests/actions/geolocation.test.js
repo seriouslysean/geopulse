@@ -8,11 +8,10 @@ import geolocation from "../../../data/fixtures/geolocation";
 
 test("should generate setGeolocation action object", () => {
   const { latitude, longitude } = geolocation;
-  const action = setGeolocation(latitude, longitude);
+  const action = setGeolocation(geolocation);
   expect(action).toEqual({
     type: SET_GEOLOCATION,
-    latitude,
-    longitude
+    geolocation
   });
 });
 

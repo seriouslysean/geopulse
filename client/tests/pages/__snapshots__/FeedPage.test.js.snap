@@ -44,6 +44,7 @@ exports[`should render FeedPage correctly 1`] = `
       <Connect(HOC) />
       <Connect(HOC) />
       <Connect(HOC) />
+      <Connect(HOC) />
     </div>
   </div>
 </div>
