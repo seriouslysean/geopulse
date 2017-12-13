@@ -1,6 +1,7 @@
 import express from "express";
 import { matchRoutes } from "react-router-config";
 import proxy from "express-http-proxy";
+import config from "../../config/config";
 import Routes from "../../client/src/routes/AppRoutes";
 import renderer from "../helpers/renderer";
 import createStore from "../helpers/createStore";
@@ -8,15 +9,20 @@ import createStore from "../helpers/createStore";
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.use(function(req, res, next) {
-  var schema = req.headers["x-forwarded-proto"];
-  if (schema === "https" || process.env.NODE_ENV !== "production") return next();
-  res.redirect("https://" + req.headers.host + req.url);
-});
+app.set("trust proxy", true);
+
+if (config.FORCE_SSL) {
+  app.use(function(req, res, next) {
+    var schema = req.headers["x-forwarded-proto"];
+    if (schema === "https" || process.env.NODE_ENV !== "production") return next();
+    res.redirect("https://" + req.headers.host + req.url);
+  });
+}
 
 app.use(express.static("client/public"));
 
 require("../routes/chatter")(app);
+require("../routes/geolocation")(app);
 
 app.get("*", (req, res) => {
   const store = createStore(req);

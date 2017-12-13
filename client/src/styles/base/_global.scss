@@ -58,11 +58,27 @@ h6 {
   }
 }
 
-a {
+a,
+button,
+.button {
+  background: transparent none;
+  border: none;
+  border-radius: 0;
   color: $greyDark;
+  cursor: pointer;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   &:hover {
     color: lighten($greyDark, 20%);
+  }
+}
+
+button,
+.button {
+  border: 0.2rem solid white;
+  color: white;
+  &:hover {
+    background-color: rgba(white, 0.2);
+    color: white;
   }
 }

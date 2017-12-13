@@ -1,0 +1,30 @@
+.accuracy {
+}
+
+.accuracy__content {
+  .content {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.accuracy__intro {
+  margin: 0 auto $spacingL;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.accuracy__button {
+  flex: 0 1 auto;
+  margin: 0 auto;
+  padding: $spacingS $spacingM;
+}
+
+.accuracy_geolocation {
+  color: rgba(white, 0.4);
+  font-size: $fontS;
+  padding: $spacingL 0;
+  text-align: center;
+}

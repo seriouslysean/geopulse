@@ -1,3 +1,19 @@
+import axiosInstance from "../helpers/axiosInstance";
+import { defaultState } from "../reducers/geolocationReducer";
+
+export const getIpGeoLocation = () => {
+  const endpoint = "/api/geolocation";
+  return async dispatch => {
+    try {
+      const data = await axiosInstance.get(endpoint);
+      const { latitude, longitude } = data.data;
+      return dispatch(setGeolocation(latitude, longitude));
+    } catch (e) {
+      console.error("Error fetching data", e);
+    }
+  };
+};
+
 export const getGeolocation = () => {
   return dispatch => {
     return new Promise((resolve, reject) => {
@@ -5,7 +21,7 @@ export const getGeolocation = () => {
         navigator.geolocation.getCurrentPosition(
           location => {
             const { latitude, longitude } = location.coords;
-            dispatch(setGeolocation(latitude, longitude));
+            dispatch(setGeolocation(latitude, longitude, true));
             resolve(location.coords);
           },
           () => {
@@ -23,10 +39,11 @@ export const getGeolocation = () => {
 };
 
 export const SET_GEOLOCATION = "SET_GEOLOCATION";
-export const setGeolocation = (latitude = false, longitude = false) => ({
+export const setGeolocation = (latitude = false, longitude = false, accurate = false) => ({
   type: SET_GEOLOCATION,
   latitude,
-  longitude
+  longitude,
+  accurate
 });
 
 export const SET_GEOLOCATION_UNAVAILABLE = "SET_GEOLOCATION_UNAVAILABLE";

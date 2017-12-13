@@ -1,7 +1,8 @@
+import _ from "lodash";
 import React from "react";
 import { connect } from "react-redux";
 import config from "../../../config/config";
-import { getGeolocation, setGeolocationUnavailable } from "../actions/geolocation";
+import { getIpGeoLocation, setGeolocationUnavailable } from "../actions/geolocation";
 import { getWeather } from "../actions/weather";
 import { getPhotos } from "../actions/photos";
 import { getChatter } from "../actions/chatter";
@@ -11,6 +12,7 @@ import withWeather from "../hocs/withWeather";
 import withPhotos from "../hocs/withPhotos";
 import withChatter from "../hocs/withChatter";
 import withVideos from "../hocs/withVideos";
+import Accuracy from "../components/Accuracy";
 import Location from "../components/Location";
 import Weather from "../components/Weather";
 import Photos from "../components/Photos";
@@ -18,6 +20,7 @@ import Chatter from "../components/Chatter";
 import Videos from "../components/Videos";
 import Unavailable from "../components/Unavailable";
 
+const AccuracyWithGeolocation = withGeolocation(Accuracy);
 const LocationWithGeolocation = withGeolocation(Location);
 const WeatherWithWeather = withGeolocation(withWeather(Weather));
 const PhotosWithPhotos = withGeolocation(withPhotos(Photos));
@@ -28,28 +31,27 @@ export class FeedPage extends React.Component {
   state = {
     unavailable: false
   };
-  componentDidMount() {
-    if (!this.props.geolocation) {
-      this.props
-        .getGeolocation()
-        .then(location => {
-          const { latitude, longitude } = location;
-          this.props.getWeather(latitude, longitude);
-          this.props.getPhotos(latitude, longitude);
-          this.props.getChatter(latitude, longitude);
-          this.props.getVideos(latitude, longitude);
-        })
-        .catch(() => {
-          this.props.setGeolocationUnavailable();
-        });
-    }
-  }
+  refreshData = geolocation => {
+    const { latitude, longitude } = geolocation;
+    this.props.getWeather(latitude, longitude);
+    this.props.getPhotos(latitude, longitude);
+    this.props.getChatter(latitude, longitude);
+    this.props.getVideos(latitude, longitude);
+  };
   componentWillReceiveProps(nextProps) {
     const { geolocation } = nextProps;
     if (geolocation.unavailable) {
       this.setState(() => ({
         unavailable: true
       }));
+    }
+    if (geolocation && !_.isEqual(this.props.geolocation, geolocation)) {
+      this.refreshData(geolocation);
+    }
+  }
+  componentDidMount() {
+    if (this.props.geolocation) {
+      this.refreshData(this.props.geolocation);
     }
   }
   renderContent() {
@@ -63,6 +65,7 @@ export class FeedPage extends React.Component {
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
+        <AccuracyWithGeolocation />
         <WeatherWithWeather />
         <PhotosWithPhotos />
         <ChatterWithChatter />
@@ -84,7 +87,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getGeolocation: () => dispatch(getGeolocation()),
   setGeolocationUnavailable: () => dispatch(setGeolocationUnavailable()),
   getWeather: (latitude, longitude) => dispatch(getWeather(latitude, longitude)),
   getPhotos: (latitude, longitude) => dispatch(getPhotos(latitude, longitude)),
@@ -93,5 +95,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default {
+  loadData: ({ dispatch }) => dispatch(getIpGeoLocation()),
   component: connect(mapStateToProps, mapDispatchToProps)(FeedPage)
 };

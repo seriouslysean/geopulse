@@ -3,13 +3,16 @@ import Loading from "./Loading";
 import PhotosPhoto from "./PhotosPhoto";
 
 class Photos extends React.Component {
+  renderPhotos = () => {
+    return this.props.photos.collection.map(photo => {
+      return <PhotosPhoto key={photo.id} photo={photo} />;
+    });
+  };
   renderContent = () => {
     return (
       <div className="content">
         <ul className="photos__grid">
-          {this.props.photos.collection.map(photo => {
-            return <PhotosPhoto key={photo.id} photo={photo} />;
-          })}
+          {this.props.photos.collection.length ? this.renderPhotos() : <p>No photos found</p>}
         </ul>
       </div>
     );

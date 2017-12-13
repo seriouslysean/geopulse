@@ -9,6 +9,7 @@ Goal of the project, features, etc. [View the demo on Heroku](https://geopulse-a
 ## Build
 
 1. Clone repository locally
+1. Copy `.env.sample` to `.env` and add any API keys as needed
 1. Run `yarn && yarn dev`
 1. Open `http://localhost:3000` in your browser
 

@@ -3,13 +3,16 @@ import Loading from "../components/Loading";
 import VideosVideo from "./VideosVideo";
 
 class Videos extends React.Component {
+  renderVideos = () => {
+    return this.props.videos.collection.map(video => {
+      return <VideosVideo key={video.id.videoId} video={video} />;
+    });
+  };
   renderContent = () => {
     return (
       <div className="content">
         <ul className="videos__list">
-          {this.props.videos.collection.map(video => {
-            return <VideosVideo key={video.id.videoId} video={video} />;
-          })}
+          {this.props.videos.collection.length ? this.renderVideos() : <p>No videos found</p>}
         </ul>
       </div>
     );

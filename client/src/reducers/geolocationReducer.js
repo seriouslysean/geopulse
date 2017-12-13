@@ -7,7 +7,8 @@ export default (state = defaultState, action) => {
     case SET_GEOLOCATION:
       return {
         latitude: action.latitude,
-        longitude: action.longitude
+        longitude: action.longitude,
+        accurate: action.accurate
       };
     case SET_GEOLOCATION_UNAVAILABLE:
       return {

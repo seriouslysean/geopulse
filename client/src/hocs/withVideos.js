@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 function withVideos(WrappedComponent) {
   class HOC extends React.Component {
     state = {
-      ready: false
+      ready: this.props.ready
     };
     componentWillReceiveProps(nextProps) {
       const { videos } = nextProps;

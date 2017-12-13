@@ -1,5 +1,6 @@
 import axios from "axios";
 import config from "../../../config/config";
+import { defaultState } from "../reducers/weatherReducer";
 
 export const getWeather = (latitude, longitude) => {
   const endpoint = `https://api.wunderground.com/api/${
@@ -11,14 +12,14 @@ export const getWeather = (latitude, longitude) => {
       const weather = data.data.current_observation;
       return dispatch(setWeather(weather));
     } catch (e) {
-      console.log("Error fetching data", e);
+      console.error("Error fetching data", e);
     }
   };
 };
 
 export const SET_WEATHER = "SET_WEATHER";
 
-export const setWeather = weather => ({
+export const setWeather = (weather = defaultState) => ({
   type: SET_WEATHER,
   weather
 });
