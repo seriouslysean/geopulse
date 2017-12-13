@@ -1,8 +1,8 @@
 import express from "express";
 import compression from "compression";
 import { matchRoutes } from "react-router-config";
-import proxy from "express-http-proxy";
 import config from "../../config/config";
+import { getOriginIp } from "../helpers/originIp";
 import Routes from "../../client/src/routes/AppRoutes";
 import renderer from "../helpers/renderer";
 import createStore from "../helpers/createStore";
@@ -10,7 +10,7 @@ import createStore from "../helpers/createStore";
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.enable("trust proxy");
+app.set("trust proxy");
 app.use(compression());
 
 if (config.FORCE_SSL) {
@@ -27,11 +27,21 @@ require("../routes/chatter")(app);
 require("../routes/geolocation")(app);
 
 app.get("*", (req, res) => {
+  const clientIp = getOriginIp(req);
+  if (clientIp) {
+    app.set("geopulseClientIp", clientIp);
+  }
+
   const store = createStore(req);
 
   const promises = matchRoutes(Routes, req.path)
     .map(({ route }) => {
-      return route.loadData ? route.loadData(store) : null;
+      return route.loadData
+        ? route.loadData({
+            ...store,
+            clientIp
+          })
+        : null;
     })
     .map(promise => {
       if (promise) {

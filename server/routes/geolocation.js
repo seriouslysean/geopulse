@@ -1,10 +1,10 @@
 import axios from "axios";
+import { getOriginIp } from "../helpers/originIp";
 import geolocationProp from "../../data/fixtures/geolocation";
 
 module.exports = app => {
   app.get("/api/geolocation", async (req, res) => {
-    console.log(req);
-    let clientIp = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+    let clientIp = getOriginIp(req);
 
     if (process.env.NODE_ENV === "development") {
       try {
