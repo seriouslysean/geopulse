@@ -4,7 +4,7 @@ import geolocationProp from "../../data/fixtures/geolocation";
 
 module.exports = app => {
   app.get("/api/geolocation/:clientIp", async (req, res) => {
-    let clientIp = req.params.clientId ? req.params.clientId : getOriginIp(req);
+    let clientIp = req.params.clientIp || getOriginIp(req);
 
     if (process.env.NODE_ENV === "development") {
       try {
