@@ -24,10 +24,11 @@ module.exports = app => {
         });
       } catch (error) {
         console.error(error);
+        res.send(geolocationProp);
       }
+    } else {
+      console.log("Unable to geolocate user, sending default data");
+      res.send(geolocationProp);
     }
-
-    console.log("Unable to geolocate user, sending default data");
-    res.send(geolocationProp);
   });
 };
