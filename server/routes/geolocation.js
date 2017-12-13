@@ -1,11 +1,8 @@
 import axios from "axios";
+import geolocationProp from "../../data/fixtures/geolocation";
 
 module.exports = app => {
   app.get("/api/geolocation", async (req, res) => {
-    const defaults = {
-      latitude: 0,
-      longitude: 0
-    };
     let clientIp = res.ip;
     console.log(res);
 
@@ -31,6 +28,7 @@ module.exports = app => {
       }
     }
 
-    res.send(defaults);
+    console.log("Unable to geolocate user, sending default data");
+    res.send(geolocationProp);
   });
 };
