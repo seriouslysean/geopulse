@@ -1,7 +1,14 @@
 import React from "react";
 
 const PhotosPhoto = ({ photo }) => {
-  const { id, caption: { text: alt }, images: { standard_resolution: image }, likes, link, user: { username } } = photo;
+  const {
+    id,
+    caption: { text: alt = "" },
+    images: { standard_resolution: image },
+    likes,
+    link,
+    user: { username }
+  } = photo;
   return (
     <li className="photos__photo">
       <a rel="external" href={link} title={alt}>
