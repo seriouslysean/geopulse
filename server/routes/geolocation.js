@@ -4,7 +4,9 @@ import geolocationProp from "../../data/fixtures/geolocation";
 
 module.exports = app => {
   app.get("/api/geolocation/:clientIp", async (req, res) => {
+    console.log(req.params);
     let clientIp = req.params.clientId || getOriginIp(req);
+    console.log(clientIp);
 
     if (process.env.NODE_ENV === "development") {
       try {
@@ -18,6 +20,7 @@ module.exports = app => {
     if (clientIp) {
       try {
         const data = await axios(`https://freegeoip.net/json/${clientIp}`);
+        console.log(data);
         const { latitude, longitude } = data.data;
         res.send({
           latitude,
