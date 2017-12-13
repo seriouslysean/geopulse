@@ -1,4 +1,5 @@
 import express from "express";
+import compression from "compression";
 import { matchRoutes } from "react-router-config";
 import proxy from "express-http-proxy";
 import config from "../../config/config";
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.set("trust proxy", true);
+app.use(compression());
 
 if (config.FORCE_SSL) {
   app.use(function(req, res, next) {

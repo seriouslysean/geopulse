@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const merge = require("webpack-merge");
+const autoprefixer = require("autoprefixer");
 const common = require("./webpack.common.js");
 
 if (process.env.NODE_ENV === "development") {
@@ -29,10 +30,18 @@ const config = {
               }
             },
             {
+              loader: "postcss-loader",
+              options: {
+                ident: "postcss",
+                plugins: loader => [autoprefixer],
+                sourceMap: true
+              }
+            },
+            {
               loader: "sass-loader",
               options: {
-                sourceMap: true,
-                includePaths: [path.resolve(__dirname, "..", "node_modules")]
+                includePaths: [path.resolve(__dirname, "..", "node_modules")],
+                sourceMap: true
               }
             }
           ]
