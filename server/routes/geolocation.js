@@ -4,8 +4,7 @@ import geolocationProp from "../../data/fixtures/geolocation";
 module.exports = app => {
   app.get("/api/geolocation", async (req, res) => {
     console.log(req);
-    let clientIp =
-      req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress || req.ip;
+    let clientIp = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
 
     if (process.env.NODE_ENV === "development") {
       try {
