@@ -21,9 +21,8 @@ Goal of the project, features, etc. [View the demo on Heroku](https://geopulse-a
 ## Workflow
 
 1. Hit the landing page
-1. Prompt user to share location via browser
-   * Yes, load content
-   * No, show geolocation unavailable screen
+1. Geolocation is approximated based on IP address
+1. Load initial content
 1. Start loading content with Longitude + Latitude. Show loading animation until ready
    * Map ([Google Maps](https://developers.google.com/maps/))
    * Visual of your approximate current location
@@ -36,6 +35,9 @@ Goal of the project, features, etc. [View the demo on Heroku](https://geopulse-a
      * Up to 4 tweets posted within 5km of latitude + longitude
    * Videos ([YouTube](https://developers.google.com/youtube/))
      * Up to 4 videos posted within 5km of latitude + longitude
+1. User clicks to improve accuracy (share location via browser)
+   * If accepted, load content
+   * If declined, show geolocation unavailable screen
 
 ## Roadmap
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getGeolocation, setGeolocation } from "../actions/geolocation";
+import { getGeolocation, setGeolocation, setGeolocationUnavailable } from "../actions/geolocation";
 import { getWeather, setWeather } from "../actions/weather";
 import { getPhotos, setPhotos } from "../actions/photos";
 import { getChatter, setChatter } from "../actions/chatter";
@@ -12,7 +12,15 @@ export class Accuracy extends React.Component {
     this.props
       .resetGeolocation()
       .then(() => {
-        this.props.getGeolocation();
+        this.props
+          .getGeolocation()
+          .then(() => {
+            console.log("User shared geolocation data");
+          })
+          .catch(e => {
+            console.error("User declined geolocation sharing");
+            this.props.setGeolocationUnavailable();
+          });
       })
       .catch(() => {
         console.error("Unable to improve accuracy");
@@ -62,7 +70,8 @@ const mapDispatchToProps = dispatch => ({
       dispatch(setVideos())
     ]);
   },
-  getGeolocation: () => dispatch(getGeolocation())
+  getGeolocation: () => dispatch(getGeolocation()),
+  setGeolocationUnavailable: () => dispatch(setGeolocationUnavailable())
 });
 
 export default connect(undefined, mapDispatchToProps)(Accuracy);

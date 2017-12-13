@@ -18,7 +18,6 @@ module.exports = app => {
     if (clientIp) {
       try {
         const data = await axios(`https://freegeoip.net/json/${clientIp}`);
-        console.log(data);
         const { latitude, longitude } = data.data;
         res.send({
           latitude,
