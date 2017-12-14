@@ -6,7 +6,7 @@
 
 ## Intro
 
-Geopulse is a web app to showcase local content in your area. Currently it shows your location on a map, the weather, photos, tweets and videos within 5km. [View it on the web at https://geopul.se](https://geopul.se).
+Geopulse is a web app to showcase local content in your area. Currently it shows your location on a map, the weather, photos, tweets and videos within 5km. View it on the web at [https://geopul.se](https://geopul.se).
 
 If you find any bugs or have a question, submit it as a [GitHub Issue](https://github.com/seriouslysean/geopulse-app/issues)!
 
@@ -26,14 +26,14 @@ If you find any bugs or have a question, submit it as a [GitHub Issue](https://g
 
 1. Hit the landing page
 1. Geolocation is approximated based on IP address
-1. Start loading content with latitude + longitude. Show loading animation until ready
+1. Start loading content with latitude + longitude and show loading animation until ready
    * Map ([Google Maps](https://developers.google.com/maps/))
-   * Visual of your approximate current location
+     * Visual of your approximate current location
    * Weather ([Weather Underground](https://www.wunderground.com/weather/api/))
      * Current weather based on latitude + longitude
    * Photos ([Instagram](https://www.instagram.com/developer/))
      * Up to 6 photos posted within 5km of latitude + longitude
-     * Note: This will only work with Instagram accounts added to the sandbox application. If you build locally and add your own Instagram API Keys it will work just fine.
+     * Note: This will only work with Instagram accounts added to the sandbox application. If you build locally and add your own Instagram API Keys it will work.
    * Chatter ([Twitter](https://developer.twitter.com/))
      * Up to 4 tweets posted within 5km of latitude + longitude
    * Videos ([YouTube](https://developers.google.com/youtube/))
@@ -44,10 +44,14 @@ If you find any bugs or have a question, submit it as a [GitHub Issue](https://g
 
 ## Roadmap
 
-* Manual location selection by address/zip
-* Location radius support
-* Weather icons/animations
-* Photo/Chatter/Video load-in animations
-* Improved Instagram support
-  * Requires user login and additional tools to upgrade from sandboxed mode
-* User authentication (save locations)
+* See [enhancements](https://github.com/seriouslysean/geopulse-app/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+# Technologies
+
+* [ifconfig.io](http://ifconfig.io/) (Local IP lookup)
+* [freegeoip.net](https://freegeoip.net/) (External IP lookup)
+* [Google Maps](https://developers.google.com/maps/)
+* [Weather Underground](https://www.wunderground.com/weather/api/)
+* [Instagram](https://www.instagram.com/developer/)
+* [Twitter](https://developer.twitter.com/)
+* [YouTube](https://developers.google.com/youtube/)

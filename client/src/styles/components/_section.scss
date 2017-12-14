@@ -19,25 +19,32 @@
 }
 
 .section--bg-sky-dark {
-  background-color: $skyDark;
+  background: $skyDark;
+  background: linear-gradient(to bottom, darken($skyDark, 5%) 0%, $skyDark 100%);
 }
 .section--bg-sky-light {
-  background-color: $skyLight;
+  background: $skyLight;
+  background: linear-gradient(to bottom, darken($skyLight, 5%) 0%, $skyLight 100%);
 }
 .section--bg-earth-light {
-  background-color: $earthLight;
+  background: $earthLight;
+  background: linear-gradient(to bottom, darken($earthLight, 5%) 0%, $earthLight 100%);
 }
 .section--bg-earth-medium {
-  background-color: $earthMedium;
+  background: $earthMedium;
+  background: linear-gradient(to bottom, darken($earthMedium, 5%) 0%, $earthMedium 100%);
 }
 .section--bg-earth-dark {
-  background-color: $earthDark;
+  background: $earthDark;
+  background: linear-gradient(to bottom, darken($earthDark, 5%) 0%, $earthDark 100%);
 }
 .section--bg-earth-darker {
-  background-color: $earthDarker;
+  background: $earthDarker;
+  background: linear-gradient(to bottom, darken($earthDarker, 5%) 0%, $earthDarker 100%);
 }
 .section--bg-earth-darkest {
-  background-color: $earthDarkest;
+  background: $earthDarkest;
+  background: linear-gradient(to bottom, darken($earthDarkest, 5%) 0%, $earthDarkest 100%);
 }
 
 .section__title {
