@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master.svg?style=svg)](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master)
 
+<p align="center"><img src="client/public/assets/geopulse-banner.png" alt="Geopulse" width="600" height="314" class="inline" /></p>
+
 ## Intro
 
 Geopulse is a web app to showcase local content in your area. Currently it shows your location on a map, the weather, photos, tweets and videos within 5km. [View it on the web at https://geopul.se](https://geopul.se).
