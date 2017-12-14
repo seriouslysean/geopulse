@@ -22,7 +22,6 @@ Goal of the project, features, etc. [View the demo on Heroku](https://geopulse-a
 
 1. Hit the landing page
 1. Geolocation is approximated based on IP address
-1. Load initial content
 1. Start loading content with Longitude + Latitude. Show loading animation until ready
    * Map ([Google Maps](https://developers.google.com/maps/))
    * Visual of your approximate current location
@@ -30,20 +29,21 @@ Goal of the project, features, etc. [View the demo on Heroku](https://geopulse-a
      * Current weather based on latitude + longitude
    * Photos ([Instagram](https://www.instagram.com/developer/))
      * Up to 6 photos posted within 5km of latitude + longitude
-     * Note: this will only work with Instagram accounts added to the sandbox application.
+     * Note: This will only work with Instagram accounts added to the sandbox application. If you build locally and add your own Instagram API Keys it will work just fine.
    * Chatter ([Twitter](https://developer.twitter.com/))
      * Up to 4 tweets posted within 5km of latitude + longitude
    * Videos ([YouTube](https://developers.google.com/youtube/))
      * Up to 4 videos posted within 5km of latitude + longitude
 1. User clicks to improve accuracy (share location via browser)
-   * If accepted, load content
+   * If accepted, load more accurate content
    * If declined, show geolocation unavailable screen
 
 ## Roadmap
 
-* Manual location selection
-* Location distance option
+* Manual location selection by address/zip
+* Location radius support
 * Weather icons/animations
+* Photo/Chatter/Video load-in animations
 * Improved Instagram support
   * Requires user login and additional tools to upgrade from sandboxed mode
 * User authentication (save locations)
