@@ -26,7 +26,7 @@ If you find any bugs or have a question, submit it as a [GitHub Issue](https://g
 
 1. Hit the landing page
 1. Geolocation is approximated based on IP address
-1. Start loading content with Longitude + Latitude. Show loading animation until ready
+1. Start loading content with latitude + longitude. Show loading animation until ready
    * Map ([Google Maps](https://developers.google.com/maps/))
    * Visual of your approximate current location
    * Weather ([Weather Underground](https://www.wunderground.com/weather/api/))
