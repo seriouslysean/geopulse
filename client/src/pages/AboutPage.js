@@ -45,12 +45,12 @@ export const AboutPage = () => (
                 </a>
               </li>
               <li>
-                <a rel="external" href="http://expressjs.com/" title="Express" target="_blank">
+                <a rel="external" href="https://expressjs.com/" title="Express" target="_blank">
                   Express
                 </a>
               </li>
               <li>
-                <a rel="external" href="http://ifconfig.io/" title="ifconfig.io" target="_blank">
+                <a rel="external" href="https://ifconfig.io/" title="ifconfig.io" target="_blank">
                   ifconfig.io
                 </a>
               </li>

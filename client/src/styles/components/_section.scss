@@ -12,7 +12,7 @@
 
 .section--spacing {
   min-height: 25vh;
-  padding: $spacingL*3.25 $spacingS $spacingL;
+  padding: $spacingL*2.25 $spacingS $spacingL;
   @include media(">tablet") {
     padding: $spacingXXL $spacingL $spacingL;
   }
@@ -51,7 +51,7 @@
   color: white;
   font-family: $fontHeadings;
   font-weight: 700;
-  font-size: 6rem;
+  font-size: 4rem;
   right: 0;
   line-height: 1;
   margin: 0;
