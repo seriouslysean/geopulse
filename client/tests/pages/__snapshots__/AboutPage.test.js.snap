@@ -92,7 +92,7 @@ exports[`should render AboutPage correctly 1`] = `
             </li>
             <li>
               <a
-                href="http://expressjs.com/"
+                href="https://expressjs.com/"
                 rel="external"
                 target="_blank"
                 title="Express"
@@ -102,7 +102,7 @@ exports[`should render AboutPage correctly 1`] = `
             </li>
             <li>
               <a
-                href="http://ifconfig.io/"
+                href="https://ifconfig.io/"
                 rel="external"
                 target="_blank"
                 title="ifconfig.io"
