@@ -4,7 +4,9 @@
 
 ## Intro
 
-Goal of the project, features, etc. [View the demo on Heroku](https://geopulse-app.herokuapp.com/).
+Geopulse is a web app to showcase local content in your area. Currently it shows your location on a map, the weather, photos, tweets and videos within 5km. [View it on the web at https://geopul.se](https://geopul.se).
+
+If you find any bugs or have a question, submit it as a [GitHub Issue](https://github.com/seriouslysean/geopulse-app/issues)!
 
 ## Build
 
