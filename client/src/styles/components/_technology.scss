@@ -2,9 +2,13 @@
 }
 
 .technology__list {
-  column-count: 3;
-  column-gap: $spacingL;
+  column-count: 2;
+  column-gap: $spacingM;
   list-style: none;
   margin: 0;
   padding: 0;
+  @include media(">tablet") {
+    column-count: 3;
+    column-gap: $spacingL;
+  }
 }
