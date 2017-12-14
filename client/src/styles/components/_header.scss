@@ -21,7 +21,7 @@
     font-size: 4rem;
   }
   &:hover {
-    color: darken(white, 25%);
+    color: white;
   }
   img {
     display: block;
@@ -50,12 +50,9 @@
 }
 
 .header__link {
-  color: white;
-  &:hover {
-    color: darken(white, 25%);
-  }
 }
 
 .header__link--active {
+  color: white;
   font-weight: 600;
 }
