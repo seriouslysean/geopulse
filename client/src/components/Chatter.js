@@ -7,7 +7,7 @@ class Chatter extends React.Component {
   renderChatter = () => {
     return (
       <ul className="chatter__list">
-        {chatterProp.collection.map(status => {
+        {this.props.chatter.collection.map(status => {
           return <ChatterTweet key={status.id} tweet={status} />;
         })}
       </ul>
