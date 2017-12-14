@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master.svg?style=svg)](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master)
 
-<p align="center"><img src="client/public/assets/geopulse-banner.png" alt="Geopulse" width="600" height="314" class="inline" /></p>
+<p align="center"><img src="client/public/assets/geopulse-banner.png" alt="Geopulse" width="1200" class="inline" /></p>
 
 ## Intro
 
