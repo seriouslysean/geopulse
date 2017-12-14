@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ChatterTweetMedia with content correctly 1`] = `
+<div
+  className="chatter__media"
+>
+  <a
+    href="https://twitter.com/ritsucakes/status/940475082870263809/photo/1"
+    rel="external"
+    target="_blank"
+  >
+    <img
+      height={483}
+      src="https://pbs.twimg.com/media/DQ09GbaW4AEKsuU.jpg"
+      width={626}
+    />
+  </a>
+</div>
+`;

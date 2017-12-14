@@ -1,5 +1,6 @@
 import React from "react";
-import { getTwitterUserUrl, setupTweetText } from "../helpers/chatter";
+import { getTwitterUserUrl, getTweetMedia, setupTweetText } from "../helpers/chatter";
+import ChatterTweetMedia from "./ChatterTweetMedia";
 
 const ChatterTweet = ({ tweet }) => {
   let originalTweet = {};
@@ -10,6 +11,10 @@ const ChatterTweet = ({ tweet }) => {
   const { id, user: { screen_name } } = tweet;
   return (
     <li className="chatter__status">
+      {tweet.entities.media &&
+        tweet.entities.media.map(entity => {
+          return <ChatterTweetMedia key={entity.id} entity={entity} />;
+        })}
       <div className="chatter__text" dangerouslySetInnerHTML={{ __html: setupTweetText(tweet) }} />
       <div className="chatter__details">
         {tweet.retweeted_status && (

@@ -23,7 +23,7 @@
   word-break: break-all;
   @include media(">tablet") {
     margin: 1rem 1rem $spacingL*1.5;
-    max-width: 40rem;
+    max-width: 70%;
   }
   &:after {
     content: "";
@@ -51,6 +51,15 @@
       right: 50px;
       transform: scale(-1, 1);
     }
+  }
+}
+
+.chatter__media {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: $spacingM;
   }
 }
 

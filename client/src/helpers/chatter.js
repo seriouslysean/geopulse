@@ -20,6 +20,15 @@ export const setupTweetText = tweet => {
           });
         });
         break;
+      case "media":
+        _.each(entities[key], e => {
+          toReplace.push({
+            start: e.indices[0],
+            end: e.indices[1],
+            replace: ""
+          });
+        });
+        break;
       case "urls":
         _.each(entities[key], e => {
           toReplace.push({

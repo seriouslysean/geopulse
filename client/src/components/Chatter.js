@@ -1,12 +1,13 @@
 import React from "react";
 import Loading from "./Loading";
 import ChatterTweet from "./ChatterTweet";
+import chatterProp from "../../../data/fixtures/chatter";
 
 class Chatter extends React.Component {
   renderChatter = () => {
     return (
       <ul className="chatter__list">
-        {this.props.chatter.collection.map(status => {
+        {chatterProp.collection.map(status => {
           return <ChatterTweet key={status.id} tweet={status} />;
         })}
       </ul>
