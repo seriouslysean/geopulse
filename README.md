@@ -17,7 +17,7 @@ If you find any bugs or have a question, submit it as a [GitHub Issue](https://g
 1. Run `yarn && yarn dev`
 1. Open `http://localhost:3000` in your browser
 
-### Tests
+## Tests
 
 1. Run `yarn test` to run tests once
 1. Run `yarn test --watch` to automatically run when a test file changes
@@ -46,7 +46,7 @@ If you find any bugs or have a question, submit it as a [GitHub Issue](https://g
 
 * See [enhancements](https://github.com/seriouslysean/geopulse-app/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
 
-# Technologies
+## Technologies
 
 * [ifconfig.io](http://ifconfig.io/) (Local IP lookup)
 * [freegeoip.net](https://freegeoip.net/) (External IP lookup)
