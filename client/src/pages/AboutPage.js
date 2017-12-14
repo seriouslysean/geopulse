@@ -33,11 +33,73 @@ export const AboutPage = () => (
           </div>
         </div>
       </section>
-      <section className="section section--spacing section--bg-earth-medium">
+      <section className="section section--spacing section--bg-earth-medium technology">
         <h1 className="section__title">Technology</h1>
         <div className="content-container">
           <div className="content">
-            <p>No data is saved on our servers and is only requested on an as-needed basis.</p>
+            <p>The following technologies were used in the creation of Geopulse.</p>
+            <ul className="technology__list">
+              <li>
+                <a rel="external" href="https://nodejs.org/en/" title="Node.js" target="_blank">
+                  Node.js
+                </a>
+              </li>
+              <li>
+                <a rel="external" href="http://expressjs.com/" title="Express" target="_blank">
+                  Express
+                </a>
+              </li>
+              <li>
+                <a rel="external" href="http://ifconfig.io/" title="ifconfig.io" target="_blank">
+                  ifconfig.io
+                </a>
+              </li>
+              <li>
+                <a rel="external" href="https://freegeoip.net/" title="freegeoip.net" target="_blank">
+                  freegeoip.net
+                </a>
+              </li>
+              <li>
+                <a rel="external" href="https://developers.google.com/maps/" title="Google Maps" target="_blank">
+                  Google Maps
+                </a>
+              </li>
+              <li>
+                <a
+                  rel="external"
+                  href="https://www.wunderground.com/weather/api/"
+                  title="Weather Underground"
+                  target="_blank"
+                >
+                  Weather Underground
+                </a>
+              </li>
+              <li>
+                <a rel="external" href="https://www.instagram.com/developer/" title="Instagram" target="_blank">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a rel="external" href="https://developer.twitter.com/" title="Twitter" target="_blank">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a rel="external" href="https://developers.google.com/youtube/" title="YouTube" target="_blank">
+                  YouTube
+                </a>
+              </li>
+              <li>
+                <a rel="external" href="https://www.heroku.com/" title="Heroku" target="_blank">
+                  Heroku
+                </a>
+              </li>
+              <li>
+                <a rel="external" href="https://www.cloudflare.com/" title="Cloudflare" target="_blank">
+                  Cloudflare
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

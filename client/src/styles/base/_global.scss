@@ -64,12 +64,12 @@ button,
   background: transparent none;
   border: none;
   border-radius: 0;
-  color: $greyDark;
+  color: rgba(white, 0.6);
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease;
   &:hover {
-    color: lighten($greyDark, 20%);
+    color: rgba(white, 1);
   }
 }
 
