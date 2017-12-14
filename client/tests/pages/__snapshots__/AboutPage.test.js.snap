@@ -42,8 +42,155 @@ exports[`should render AboutPage correctly 1`] = `
           className="content"
         >
           <p>
-            No data is saved on our servers and is only requested on an as-needed basis.
+            No data is saved on our servers and is only requested on an as-needed basis. Your personal information (ip address, etc) is not sold, rented or shared with a third party, unless required by law.
           </p>
+          <p>
+            Anonymous information is tracked via
+             
+            <a
+              href="https://www.google.com/analytics/"
+              rel="external"
+              title="Google Analytics"
+            >
+              Google Analytics
+            </a>
+             
+            (which uses cookies) while you browse the site.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      className="section section--spacing section--bg-earth-medium technology"
+    >
+      <h1
+        className="section__title"
+      >
+        Technology
+      </h1>
+      <div
+        className="content-container"
+      >
+        <div
+          className="content"
+        >
+          <p>
+            The following technologies were used in the creation of Geopulse.
+          </p>
+          <ul
+            className="technology__list"
+          >
+            <li>
+              <a
+                href="https://nodejs.org/en/"
+                rel="external"
+                target="_blank"
+                title="Node.js"
+              >
+                Node.js
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://expressjs.com/"
+                rel="external"
+                target="_blank"
+                title="Express"
+              >
+                Express
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://ifconfig.io/"
+                rel="external"
+                target="_blank"
+                title="ifconfig.io"
+              >
+                ifconfig.io
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://freegeoip.net/"
+                rel="external"
+                target="_blank"
+                title="freegeoip.net"
+              >
+                freegeoip.net
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://developers.google.com/maps/"
+                rel="external"
+                target="_blank"
+                title="Google Maps"
+              >
+                Google Maps
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.wunderground.com/weather/api/"
+                rel="external"
+                target="_blank"
+                title="Weather Underground"
+              >
+                Weather Underground
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/developer/"
+                rel="external"
+                target="_blank"
+                title="Instagram"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://developer.twitter.com/"
+                rel="external"
+                target="_blank"
+                title="Twitter"
+              >
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://developers.google.com/youtube/"
+                rel="external"
+                target="_blank"
+                title="YouTube"
+              >
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.heroku.com/"
+                rel="external"
+                target="_blank"
+                title="Heroku"
+              >
+                Heroku
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.cloudflare.com/"
+                rel="external"
+                target="_blank"
+                title="Cloudflare"
+              >
+                Cloudflare
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
