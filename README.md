@@ -1,6 +1,6 @@
 # Geopulse
 
-[![CircleCI](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master.svg?style=svg)](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master)
+[![CircleCI](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master.svg?style=svg)](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master) [![Maintainability](https://api.codeclimate.com/v1/badges/dbccb166016f5f4200f9/maintainability)](https://codeclimate.com/github/seriouslysean/geopulse-app/maintainability)
 
 <p align="center"><img src="client/public/assets/geopulse-banner.png" alt="Geopulse" width="1200" class="inline" /></p>
 
