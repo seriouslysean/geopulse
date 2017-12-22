@@ -1,4 +1,5 @@
 export default {
+  BASE_URL: process.env.BASE_URL,
   FORCE_SSL: process.env.FORCE_SSL === 'true',
   GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
   GOOGLE_TRACKING_ID: process.env.GOOGLE_TRACKING_ID,

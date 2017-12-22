@@ -1,32 +1,36 @@
-import express from "express";
-import compression from "compression";
-import { matchRoutes } from "react-router-config";
-import config from "../../config/config";
-import { getOriginIp } from "../helpers/originIp";
-import Routes from "../../client/src/routes/AppRoutes";
-import renderer from "../helpers/renderer";
-import createStore from "../helpers/createStore";
+import express from 'express';
+import compression from 'compression';
+import { matchRoutes } from 'react-router-config';
+import config from '../../config/config';
+import forcePrimaryDomain from '../helpers/forcePrimaryDomain';
+import { getOriginIp } from '../helpers/originIp';
+import Routes from '../../client/src/routes/AppRoutes';
+import renderer from '../helpers/renderer';
+import createStore from '../helpers/createStore';
 
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.set("trust proxy");
+app.set('trust proxy');
 app.use(compression());
 
-if (config.FORCE_SSL) {
-  app.use(function(req, res, next) {
-    var schema = req.headers["x-forwarded-proto"];
-    if (schema === "https" || process.env.NODE_ENV !== "production") return next();
-    res.redirect("https://" + req.headers.host + req.url);
-  });
+if (process.env.NODE_ENV === 'production') {
+  app.use(forcePrimaryDomain);
+  if (config.FORCE_SSL) {
+    app.use((req, res, next) => {
+      var schema = req.headers['x-forwarded-proto'];
+      if (schema === 'https' || process.env.NODE_ENV !== 'production') return next();
+      res.redirect('https://' + req.headers.host + req.url);
+    });
+  }
 }
 
-app.use(express.static("client/public"));
+app.use(express.static('client/public'));
 
-require("../routes/chatter")(app);
-require("../routes/geolocation")(app);
+require('../routes/chatter')(app);
+require('../routes/geolocation')(app);
 
-app.get("*", (req, res) => {
+app.get('*', (req, res) => {
   const clientIp = getOriginIp(req);
   const store = createStore(req);
 
@@ -35,7 +39,7 @@ app.get("*", (req, res) => {
       return route.loadData
         ? route.loadData({
             ...store,
-            clientIp
+            clientIp,
           })
         : null;
     })
@@ -64,5 +68,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("The magic is happening on port", port);
+  console.log('The magic is happening on port', port);
 });
