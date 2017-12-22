@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: yarn
+      - run: yarn eslint
       - run: yarn test
       - run: bash .circleci/heroku-setup.sh
       - add_ssh_keys:

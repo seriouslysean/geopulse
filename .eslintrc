@@ -7,6 +7,6 @@
   },
   "extends": "airbnb",
   "rules": {
-    //"indent": [2, "tab"]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   }
 }

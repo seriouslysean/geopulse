@@ -1,167 +1,167 @@
 export default [
   {
-    featureType: "all",
-    elementType: "labels.text.fill",
+    featureType: 'all',
+    elementType: 'labels.text.fill',
     stylers: [
       {
-        color: "#4e5c6a"
-      }
-    ]
+        color: '#4e5c6a',
+      },
+    ],
   },
   {
-    featureType: "administrative.locality",
-    elementType: "all",
+    featureType: 'administrative.locality',
+    elementType: 'all',
     stylers: [
       {
-        saturation: 7
+        saturation: 7,
       },
       {
-        lightness: 19
+        lightness: 19,
       },
       {
-        visibility: "on"
-      }
-    ]
+        visibility: 'on',
+      },
+    ],
   },
   {
-    featureType: "landscape",
-    elementType: "all",
+    featureType: 'landscape',
+    elementType: 'all',
     stylers: [
       {
-        saturation: -100
+        saturation: -100,
       },
       {
-        lightness: 100
+        lightness: 100,
       },
       {
-        visibility: "simplified"
+        visibility: 'simplified',
       },
       {
-        color: "#f3f7fa"
-      }
-    ]
+        color: '#f3f7fa',
+      },
+    ],
   },
   {
-    featureType: "poi",
-    elementType: "all",
+    featureType: 'poi',
+    elementType: 'all',
     stylers: [
       {
-        saturation: -100
+        saturation: -100,
       },
       {
-        lightness: 100
+        lightness: 100,
       },
       {
-        visibility: "off"
-      }
-    ]
+        visibility: 'off',
+      },
+    ],
   },
   {
-    featureType: "road",
-    elementType: "geometry",
+    featureType: 'road',
+    elementType: 'geometry',
     stylers: [
       {
-        hue: "#bbc0c4"
+        hue: '#bbc0c4',
       },
       {
-        saturation: -93
+        saturation: -93,
       },
       {
-        lightness: 31
+        lightness: 31,
       },
       {
-        visibility: "simplified"
-      }
-    ]
+        visibility: 'simplified',
+      },
+    ],
   },
   {
-    featureType: "road",
-    elementType: "labels",
+    featureType: 'road',
+    elementType: 'labels',
     stylers: [
       {
-        hue: "#bbc0c4"
+        hue: '#bbc0c4',
       },
       {
-        saturation: -93
+        saturation: -93,
       },
       {
-        lightness: 31
+        lightness: 31,
       },
       {
-        visibility: "on"
-      }
-    ]
+        visibility: 'on',
+      },
+    ],
   },
   {
-    featureType: "road.arterial",
-    elementType: "labels",
+    featureType: 'road.arterial',
+    elementType: 'labels',
     stylers: [
       {
-        hue: "#bbc0c4"
+        hue: '#bbc0c4',
       },
       {
-        saturation: -93
+        saturation: -93,
       },
       {
-        lightness: -2
+        lightness: -2,
       },
       {
-        visibility: "simplified"
-      }
-    ]
+        visibility: 'simplified',
+      },
+    ],
   },
   {
-    featureType: "road.local",
-    elementType: "geometry",
+    featureType: 'road.local',
+    elementType: 'geometry',
     stylers: [
       {
-        hue: "#e9ebed"
+        hue: '#e9ebed',
       },
       {
-        saturation: -90
+        saturation: -90,
       },
       {
-        lightness: -8
+        lightness: -8,
       },
       {
-        visibility: "simplified"
-      }
-    ]
+        visibility: 'simplified',
+      },
+    ],
   },
   {
-    featureType: "transit",
-    elementType: "all",
+    featureType: 'transit',
+    elementType: 'all',
     stylers: [
       {
-        hue: "#e9ebed"
+        hue: '#e9ebed',
       },
       {
-        saturation: 10
+        saturation: 10,
       },
       {
-        lightness: 69
+        lightness: 69,
       },
       {
-        visibility: "on"
-      }
-    ]
+        visibility: 'on',
+      },
+    ],
   },
   {
-    featureType: "water",
-    elementType: "all",
+    featureType: 'water',
+    elementType: 'all',
     stylers: [
       {
-        saturation: -78
+        saturation: -78,
       },
       {
-        lightness: 67
+        lightness: 67,
       },
       {
-        visibility: "simplified"
+        visibility: 'simplified',
       },
       {
-        color: "#dde7f2"
-      }
-    ]
-  }
+        color: '#dde7f2',
+      },
+    ],
+  },
 ];
