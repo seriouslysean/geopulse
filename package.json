@@ -16,7 +16,7 @@
     "build:client": "webpack --config config/webpack.client.js",
     "start": "node server.js",
     "test": "jest --colors",
-    "lint": "eslint **/*.js --ignore-path .gitignore",
+    "lint": "eslint ./**/*.js --ignore-path .gitignore",
     "heroku-postbuild": "yarn build"
   },
   "dependencies": {
