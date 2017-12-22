@@ -1,8 +1,8 @@
-import React from "react";
-import App from "../components/App";
-import FeedPage from "../pages/FeedPage";
-import AboutPage from "../pages/AboutPage";
-import NotFoundPage from "../pages/NotFoundPage";
+import React from 'react';
+import App from '../components/App';
+import FeedPage from '../pages/FeedPage';
+import AboutPage from '../pages/AboutPage';
+import NotFoundPage from '../pages/NotFoundPage';
 
 export default [
   {
@@ -10,16 +10,16 @@ export default [
     routes: [
       {
         ...FeedPage,
-        path: "/",
-        exact: true
+        path: '/',
+        exact: true,
       },
       {
         ...AboutPage,
-        path: "/about"
+        path: '/about',
       },
       {
-        ...NotFoundPage
-      }
-    ]
-  }
+        ...NotFoundPage,
+      },
+    ],
+  },
 ];

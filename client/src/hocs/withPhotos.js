@@ -1,16 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 function withPhotos(WrappedComponent) {
   class HOC extends React.Component {
     state = {
-      ready: this.props.ready
+      ready: this.props.ready,
     };
     componentWillReceiveProps(nextProps) {
       const { photos } = nextProps;
       if (!this.state.ready && photos) {
         this.setState(() => ({
-          ready: true
+          ready: true,
         }));
       }
     }
@@ -23,7 +23,7 @@ function withPhotos(WrappedComponent) {
   }
 
   const mapStateToProps = ({ photos }) => ({
-    photos
+    photos,
   });
 
   return connect(mapStateToProps)(HOC);

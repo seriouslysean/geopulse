@@ -1,27 +1,25 @@
-import React from "react";
-import { connect } from "react-redux";
-import { renderRoutes } from "react-router-config";
-import { Helmet } from "react-helmet";
-import Header from "./Header";
-import Footer from "./Footer";
+import React from 'react';
+import { connect } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
+import { Helmet } from 'react-helmet';
+import Header from './Header';
+import Footer from './Footer';
 
-export const App = ({ route }) => {
-  return (
-    <div className="app">
-      <Helmet>
-        <title>Geopulse</title>
-        <meta property="og:title" content="Geopulse" />
-      </Helmet>
+export const App = ({ route }) => (
+  <div className="app">
+    <Helmet>
+      <title>Geopulse</title>
+      <meta property="og:title" content="Geopulse" />
+    </Helmet>
 
-      <Header />
+    <Header />
 
-      {renderRoutes(route.routes)}
+    {renderRoutes(route.routes)}
 
-      <Footer />
-    </div>
-  );
-};
+    <Footer />
+  </div>
+);
 
 export default {
-  component: App
+  component: App,
 };

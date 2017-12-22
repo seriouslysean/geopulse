@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react';
 
 class ChatterTweetMedia extends React.Component {
   renderPhoto = () => {
     const {
-      entity: { expanded_url: href, media_url_https: src, sizes: { large: { h: height, w: width } } }
+      entity: {
+        expanded_url: href,
+        media_url_https: src,
+        sizes: { large: { h: height, w: width } },
+      },
     } = this.props;
     return (
       <a rel="external" href={href} target="_blank">
@@ -13,9 +17,9 @@ class ChatterTweetMedia extends React.Component {
   };
   render() {
     const { entity } = this.props;
-    let content = "";
+    let content = '';
     switch (entity.type) {
-      case "photo":
+      case 'photo':
         content = this.renderPhoto();
         break;
     }

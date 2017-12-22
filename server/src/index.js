@@ -1,8 +1,7 @@
 import express from 'express';
 import compression from 'compression';
 import { matchRoutes } from 'react-router-config';
-import config from '../../config/config';
-import forcePrimaryDomain from '../helpers/forcePrimaryDomain';
+import { forcePrimaryDomain, forceSSL } from '../helpers/domain';
 import { getOriginIp } from '../helpers/originIp';
 import Routes from '../../client/src/routes/AppRoutes';
 import renderer from '../helpers/renderer';
@@ -16,13 +15,7 @@ app.use(compression());
 
 if (process.env.NODE_ENV === 'production') {
   app.use(forcePrimaryDomain);
-  if (config.FORCE_SSL) {
-    app.use((req, res, next) => {
-      var schema = req.headers['x-forwarded-proto'];
-      if (schema === 'https' || process.env.NODE_ENV !== 'production') return next();
-      res.redirect('https://' + req.headers.host + req.url);
-    });
-  }
+  app.use(forceSSL);
 }
 
 app.use(express.static('client/public'));
@@ -35,15 +28,14 @@ app.get('*', (req, res) => {
   const store = createStore(req);
 
   const promises = matchRoutes(Routes, req.path)
-    .map(({ route }) => {
-      return route.loadData
+    .map(({ route }) =>
+      (route.loadData
         ? route.loadData({
-            ...store,
-            clientIp,
-          })
-        : null;
-    })
-    .map(promise => {
+          ...store,
+          clientIp,
+        })
+        : null))
+    .map((promise) => {
       if (promise) {
         return new Promise((resolve, reject) => {
           promise.then(resolve).catch(resolve);

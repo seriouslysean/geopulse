@@ -1,14 +1,14 @@
-import React from "react";
-import Loading from "../components/Loading";
+import React from 'react';
+import Loading from '../components/Loading';
 
 class Weather extends React.Component {
   state = {
-    showFarenheit: true
+    showFarenheit: true,
   };
-  handleTemperatureToggle = e => {
+  handleTemperatureToggle = (e) => {
     e.preventDefault();
     this.setState(prevState => ({
-      showFarenheit: !prevState.showFarenheit
+      showFarenheit: !prevState.showFarenheit,
     }));
   };
   renderWeather = () => {
@@ -18,13 +18,13 @@ class Weather extends React.Component {
       temp_f,
       temp_c,
       icon,
-      forecast_url
+      forecast_url,
     } = this.props.weather;
     return (
       <div className="weather__data">
         <div
           className={`weather__temperature ${
-            this.state.showFarenheit ? "weather__temperature--f" : "weather__temperature--c"
+            this.state.showFarenheit ? 'weather__temperature--f' : 'weather__temperature--c'
           }`}
           onClick={this.handleTemperatureToggle}
         >
@@ -42,17 +42,15 @@ class Weather extends React.Component {
       </div>
     );
   };
-  renderContent = () => {
-    return (
-      <div className="content">
-        {!this.props.weather.hasOwnProperty("error") ? (
+  renderContent = () => (
+    <div className="content">
+      {!this.props.weather.hasOwnProperty('error') ? (
           this.renderWeather()
         ) : (
           <p className="text--center">No weather data found</p>
         )}
-      </div>
-    );
-  };
+    </div>
+  );
   render() {
     return (
       <section className="section section--spacing section--bg-earth-light weather">
@@ -62,7 +60,12 @@ class Weather extends React.Component {
 
             {this.props.ready && this.props.weather ? this.renderContent() : <Loading />}
 
-            <a rel="external" href="https://www.wunderground.com/" className="section__attribution" target="_blank">
+            <a
+              rel="external"
+              href="https://www.wunderground.com/"
+              className="section__attribution"
+              target="_blank"
+            >
               Powered by Weather Underground
             </a>
           </div>

@@ -1,9 +1,8 @@
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import axios from "axios";
-import reducers from "../../client/src/reducers";
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from '../../client/src/reducers';
 
-export default req => {
+export default () => {
   const store = createStore(reducers, {}, applyMiddleware(thunk));
   return store;
 };

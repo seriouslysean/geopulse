@@ -1,6 +1,6 @@
-import React from "react";
-import { getTwitterUserUrl, getTweetMedia, setupTweetText } from "../helpers/chatter";
-import ChatterTweetMedia from "./ChatterTweetMedia";
+import React from 'react';
+import { getTwitterUserUrl, getTweetMedia, setupTweetText } from '../helpers/chatter';
+import ChatterTweetMedia from './ChatterTweetMedia';
 
 const ChatterTweet = ({ tweet }) => {
   let originalTweet = {};
@@ -12,14 +12,12 @@ const ChatterTweet = ({ tweet }) => {
   return (
     <li className="chatter__status">
       {tweet.entities.media &&
-        tweet.entities.media.map(entity => {
-          return <ChatterTweetMedia key={entity.id} entity={entity} />;
-        })}
+        tweet.entities.media.map(entity => <ChatterTweetMedia key={entity.id} entity={entity} />)}
       <div className="chatter__text" dangerouslySetInnerHTML={{ __html: setupTweetText(tweet) }} />
       <div className="chatter__details">
         {tweet.retweeted_status && (
           <div className="status__rt">
-            RT /{" "}
+            RT /{' '}
             <a
               rel="external"
               href={getTwitterUserUrl(originalTweet.user.screen_name)}

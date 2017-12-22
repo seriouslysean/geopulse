@@ -16,7 +16,7 @@
     "build:client": "webpack --config config/webpack.client.js",
     "start": "node server.js",
     "test": "jest --colors",
-    "lint": "eslint **/*.js --ignore-pattern node_modules/",
+    "lint": "eslint **/*.js --ignore-path .gitignore",
     "heroku-postbuild": "yarn build"
   },
   "dependencies": {
@@ -76,6 +76,21 @@
     "jest": "^21.2.1",
     "localtunnel": "^1.8.3",
     "react-test-renderer": "^16.2.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": "airbnb",
+    "rules": {
+      "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+      "no-console": "off",
+      "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }
   },
   "jest": {
     "setupFiles": ["<rootDir>/config/jest.shim.js", "<rootDir>/config/jest.setup.js"],

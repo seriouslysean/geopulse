@@ -1,24 +1,22 @@
-import React from "react";
-import Loading from "../components/Loading";
-import VideosVideo from "./VideosVideo";
+import React from 'react';
+import Loading from '../components/Loading';
+import VideosVideo from './VideosVideo';
 
 class Videos extends React.Component {
-  renderVideos = () => {
-    return (
-      <ul className="videos__list">
-        {this.props.videos.collection.map(video => {
-          return <VideosVideo key={video.id.videoId} video={video} />;
-        })}
-      </ul>
-    );
-  };
-  renderContent = () => {
-    return (
-      <div className="content">
-        {this.props.videos.collection.length ? this.renderVideos() : <p className="text--center">No videos found</p>}
-      </div>
-    );
-  };
+  renderVideos = () => (
+    <ul className="videos__list">
+      {this.props.videos.collection.map(video => <VideosVideo key={video.id.videoId} video={video} />)}
+    </ul>
+  );
+  renderContent = () => (
+    <div className="content">
+      {this.props.videos.collection.length ? (
+          this.renderVideos()
+        ) : (
+          <p className="text--center">No videos found</p>
+        )}
+    </div>
+  );
   render() {
     return (
       <section className="section section--spacing section--bg-earth-darker videos">
@@ -28,7 +26,12 @@ class Videos extends React.Component {
 
             {this.props.ready && this.props.videos ? this.renderContent() : <Loading />}
 
-            <a rel="external" href="https://www.youtube.com/" className="section__attribution" target="_blank">
+            <a
+              rel="external"
+              href="https://www.youtube.com/"
+              className="section__attribution"
+              target="_blank"
+            >
               Powered by YouTube
             </a>
           </div>

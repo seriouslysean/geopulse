@@ -1,8 +1,15 @@
-import React from "react";
+import React from 'react';
 
 const PhotosPhoto = ({ photo }) => {
-  let alt = "";
-  const { id, caption, images: { standard_resolution: image }, likes, link, user: { username } } = photo;
+  let alt = '';
+  const {
+    id,
+    caption,
+    images: { standard_resolution: image },
+    likes,
+    link,
+    user: { username },
+  } = photo;
   if (caption) {
     alt = caption.text;
   }

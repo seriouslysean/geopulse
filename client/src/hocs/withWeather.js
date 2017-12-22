@@ -1,16 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 function withWeather(WrappedComponent) {
   class HOC extends React.Component {
     state = {
-      ready: this.props.ready
+      ready: this.props.ready,
     };
     componentWillReceiveProps(nextProps) {
       const { weather } = nextProps;
       if (!this.state.ready && weather) {
         this.setState(() => ({
-          ready: true
+          ready: true,
         }));
       }
     }
@@ -23,7 +23,7 @@ function withWeather(WrappedComponent) {
   }
 
   const mapStateToProps = ({ weather }) => ({
-    weather
+    weather,
   });
 
   return connect(mapStateToProps)(HOC);

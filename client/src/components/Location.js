@@ -1,7 +1,7 @@
-import React from "react";
-import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
-import googleMapStyles from "../../../config/googlemaps.style";
-import Loading from "../components/Loading";
+import React from 'react';
+import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
+import googleMapStyles from '../../../config/googlemaps.style';
+import Loading from '../components/Loading';
 
 class Location extends React.Component {
   renderContent = () => {
@@ -12,12 +12,12 @@ class Location extends React.Component {
           defaultZoom={14}
           defaultCenter={{ lat, lng }}
           defaultOptions={{
-            backgroundColor: "#90acf3",
+            backgroundColor: '#90acf3',
             clickableIcons: false,
             disableDefaultUI: true,
             draggable: false,
             fullscreenControl: false,
-            gestureHandling: "none",
+            gestureHandling: 'none',
             keyboardShortcuts: false,
             mapTypeControl: false,
             maxZoom: 14,
@@ -28,7 +28,7 @@ class Location extends React.Component {
             scrollwheel: false,
             streetViewControl: false,
             styles: googleMapStyles,
-            zoomControl: false
+            zoomControl: false,
           }}
         />
       </div>

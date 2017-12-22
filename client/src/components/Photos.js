@@ -1,24 +1,22 @@
-import React from "react";
-import Loading from "./Loading";
-import PhotosPhoto from "./PhotosPhoto";
+import React from 'react';
+import Loading from './Loading';
+import PhotosPhoto from './PhotosPhoto';
 
 class Photos extends React.Component {
-  renderPhotos = () => {
-    return (
-      <ul className="photos__grid">
-        {this.props.photos.collection.map(photo => {
-          return <PhotosPhoto key={photo.id} photo={photo} />;
-        })}
-      </ul>
-    );
-  };
-  renderContent = () => {
-    return (
-      <div className="content">
-        {this.props.photos.collection.length ? this.renderPhotos() : <p className="text--center">No photos found</p>}
-      </div>
-    );
-  };
+  renderPhotos = () => (
+    <ul className="photos__grid">
+      {this.props.photos.collection.map(photo => <PhotosPhoto key={photo.id} photo={photo} />)}
+    </ul>
+  );
+  renderContent = () => (
+    <div className="content">
+      {this.props.photos.collection.length ? (
+          this.renderPhotos()
+        ) : (
+          <p className="text--center">No photos found</p>
+        )}
+    </div>
+  );
   render() {
     return (
       <section className="section section--spacing section--bg-earth-medium photos">
@@ -28,7 +26,12 @@ class Photos extends React.Component {
 
             {this.props.ready && this.props.photos ? this.renderContent() : <Loading />}
 
-            <a rel="external" href="https://www.instagram.com/" className="section__attribution" target="_blank">
+            <a
+              rel="external"
+              href="https://www.instagram.com/"
+              className="section__attribution"
+              target="_blank"
+            >
               Powered by Instagram
             </a>
           </div>

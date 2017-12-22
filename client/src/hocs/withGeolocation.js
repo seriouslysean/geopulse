@@ -1,25 +1,23 @@
-import _ from "lodash";
-import React from "react";
-import { connect } from "react-redux";
+import _ from 'lodash';
+import React from 'react';
+import { connect } from 'react-redux';
 
 function withGeolocation(WrappedComponent) {
   class HOC extends React.Component {
     state = {
       ready: this.props.geolocation,
-      unavailable: false
+      unavailable: false,
     };
     componentWillReceiveProps(nextProps) {
       const { geolocation } = nextProps;
       if (!this.state.ready && geolocation.unavailable) {
         this.setState(() => ({
-          unavailable: true
+          unavailable: true,
         }));
-      } else {
-        if (!this.state.ready && geolocation) {
-          this.setState(() => ({
-            ready: true
-          }));
-        }
+      } else if (!this.state.ready && geolocation) {
+        this.setState(() => ({
+          ready: true,
+        }));
       }
     }
     componentWillUpdate() {
@@ -27,15 +25,14 @@ function withGeolocation(WrappedComponent) {
     }
     render() {
       if (this.state.unavailable) {
-        return "";
-      } else {
-        return <WrappedComponent {...this.props} ready={this.state.ready} />;
+        return '';
       }
+      return <WrappedComponent {...this.props} ready={this.state.ready} />;
     }
   }
 
   const mapStateToProps = ({ geolocation }) => ({
-    geolocation
+    geolocation,
   });
 
   return connect(mapStateToProps)(HOC);

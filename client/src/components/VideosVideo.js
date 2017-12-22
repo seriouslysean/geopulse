@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const VideosVideo = ({ video }) => {
   const { id: { videoId }, snippet: { title, thumbnails: { high: image } } } = video;

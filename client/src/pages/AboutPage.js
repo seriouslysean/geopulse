@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const AboutPage = () => (
   <div className="page-about">
@@ -8,9 +8,9 @@ export const AboutPage = () => (
         <div className="content-container">
           <div className="content">
             <p>
-              Geopulse is a tool that allows you to see content based on your location including a Google Map of the
-              area, the local weather from Weather Underground, photos from Instagram, tweets from Twitter and videos
-              from YouTube.
+              Geopulse is a tool that allows you to see content based on your location including a
+              Google Map of the area, the local weather from Weather Underground, photos from
+              Instagram, tweets from Twitter and videos from YouTube.
             </p>
           </div>
         </div>
@@ -20,14 +20,15 @@ export const AboutPage = () => (
         <div className="content-container">
           <div className="content">
             <p>
-              No data is saved on our servers and is only requested on an as-needed basis. Your personal information (ip
-              address, etc) is not sold, rented or shared with a third party, unless required by law.
+              No data is saved on our servers and is only requested on an as-needed basis. Your
+              personal information (ip address, etc) is not sold, rented or shared with a third
+              party, unless required by law.
             </p>
             <p>
-              Anonymous information is tracked via{" "}
+              Anonymous information is tracked via{' '}
               <a rel="external" href="https://www.google.com/analytics/" title="Google Analytics">
                 Google Analytics
-              </a>{" "}
+              </a>{' '}
               (which uses cookies) while you browse the site.
             </p>
           </div>
@@ -55,18 +56,28 @@ export const AboutPage = () => (
                 </a>
               </li>
               <li>
-                <a rel="external" href="https://freegeoip.net/" title="freegeoip.net" target="_blank">
+                <a
+                  rel="external noopener noreferrer"
+                  href="https://freegeoip.net/"
+                  title="freegeoip.net"
+                  target="_blank"
+                >
                   freegeoip.net
                 </a>
               </li>
               <li>
-                <a rel="external" href="https://developers.google.com/maps/" title="Google Maps" target="_blank">
+                <a
+                  rel="external noopener noreferrer"
+                  href="https://developers.google.com/maps/"
+                  title="Google Maps"
+                  target="_blank"
+                >
                   Google Maps
                 </a>
               </li>
               <li>
                 <a
-                  rel="external"
+                  rel="external noopener noreferrer"
                   href="https://www.wunderground.com/weather/api/"
                   title="Weather Underground"
                   target="_blank"
@@ -75,17 +86,32 @@ export const AboutPage = () => (
                 </a>
               </li>
               <li>
-                <a rel="external" href="https://www.instagram.com/developer/" title="Instagram" target="_blank">
+                <a
+                  rel="external noopener noreferrer"
+                  href="https://www.instagram.com/developer/"
+                  title="Instagram"
+                  target="_blank"
+                >
                   Instagram
                 </a>
               </li>
               <li>
-                <a rel="external" href="https://developer.twitter.com/" title="Twitter" target="_blank">
+                <a
+                  rel="external noopener noreferrer"
+                  href="https://developer.twitter.com/"
+                  title="Twitter"
+                  target="_blank"
+                >
                   Twitter
                 </a>
               </li>
               <li>
-                <a rel="external" href="https://developers.google.com/youtube/" title="YouTube" target="_blank">
+                <a
+                  rel="external noopener noreferrer"
+                  href="https://developers.google.com/youtube/"
+                  title="YouTube"
+                  target="_blank"
+                >
                   YouTube
                 </a>
               </li>
@@ -95,7 +121,12 @@ export const AboutPage = () => (
                 </a>
               </li>
               <li>
-                <a rel="external" href="https://www.cloudflare.com/" title="Cloudflare" target="_blank">
+                <a
+                  rel="external noopener noreferrer"
+                  href="https://www.cloudflare.com/"
+                  title="Cloudflare"
+                  target="_blank"
+                >
                   Cloudflare
                 </a>
               </li>
@@ -108,5 +139,5 @@ export const AboutPage = () => (
 );
 
 export default {
-  component: AboutPage
+  component: AboutPage,
 };

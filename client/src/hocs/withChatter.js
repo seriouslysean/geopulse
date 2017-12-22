@@ -1,16 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 function withChatters(WrappedComponent) {
   class HOC extends React.Component {
     state = {
-      ready: this.props.ready
+      ready: this.props.ready,
     };
     componentWillReceiveProps(nextProps) {
       const { chatter } = nextProps;
       if (!this.state.ready && chatter) {
         this.setState(() => ({
-          ready: true
+          ready: true,
         }));
       }
     }
@@ -23,7 +23,7 @@ function withChatters(WrappedComponent) {
   }
 
   const mapStateToProps = ({ chatter }) => ({
-    chatter
+    chatter,
   });
 
   return connect(mapStateToProps)(HOC);

@@ -1,16 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 function withVideos(WrappedComponent) {
   class HOC extends React.Component {
     state = {
-      ready: this.props.ready
+      ready: this.props.ready,
     };
     componentWillReceiveProps(nextProps) {
       const { videos } = nextProps;
       if (!this.state.ready && videos) {
         this.setState(() => ({
-          ready: true
+          ready: true,
         }));
       }
     }
@@ -23,7 +23,7 @@ function withVideos(WrappedComponent) {
   }
 
   const mapStateToProps = ({ videos }) => ({
-    videos
+    videos,
   });
 
   return connect(mapStateToProps)(HOC);

@@ -1,19 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import thunk from "redux-thunk";
-import axios from "axios";
-import { BrowserRouter } from "react-router-dom";
-import { createStore, applyMiddleware, compose } from "redux";
-import { Provider } from "react-redux";
-import { renderRoutes } from "react-router-config";
-import ReactGA from "react-ga";
-import config from "../../config/config";
-import "normalize.css/normalize.css";
-import "./styles/styles.scss";
-import AppRoutes from "./routes/AppRoutes";
-import reducers from "./reducers";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import thunk from 'redux-thunk';
+import axios from 'axios';
+import { BrowserRouter } from 'react-router-dom';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
+import ReactGA from 'react-ga';
+import 'normalize.css/normalize.css';
+import config from '../../config/config';
+import './styles/styles.scss';
+import AppRoutes from './routes/AppRoutes';
+import reducers from './reducers';
 
-if (config.GOOGLE_TRACKING_ID && process.env.NODE_ENV === "production") {
+if (config.GOOGLE_TRACKING_ID && process.env.NODE_ENV === 'production') {
   ReactGA.initialize(config.GOOGLE_TRACKING_ID);
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
@@ -29,4 +29,4 @@ const html = (
   </Provider>
 );
 
-ReactDOM.hydrate(html, document.querySelector("#root"));
+ReactDOM.hydrate(html, document.querySelector('#root'));

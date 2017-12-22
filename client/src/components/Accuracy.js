@@ -1,29 +1,29 @@
-import React from "react";
-import { connect } from "react-redux";
-import { getGeolocation, setGeolocation, setGeolocationUnavailable } from "../actions/geolocation";
-import { getWeather, setWeather } from "../actions/weather";
-import { getPhotos, setPhotos } from "../actions/photos";
-import { getChatter, setChatter } from "../actions/chatter";
-import { getVideos, setVideos } from "../actions/videos";
-import Loading from "../components/Loading";
+import React from 'react';
+import { connect } from 'react-redux';
+import { getGeolocation, setGeolocation, setGeolocationUnavailable } from '../actions/geolocation';
+import { getWeather, setWeather } from '../actions/weather';
+import { getPhotos, setPhotos } from '../actions/photos';
+import { getChatter, setChatter } from '../actions/chatter';
+import { getVideos, setVideos } from '../actions/videos';
+import Loading from '../components/Loading';
 
 export class Accuracy extends React.Component {
-  handleImproveAccuracy = e => {
+  handleImproveAccuracy = (e) => {
     this.props
       .resetGeolocation()
       .then(() => {
         this.props
           .getGeolocation()
           .then(() => {
-            console.log("User shared geolocation data");
+            console.log('User shared geolocation data');
           })
-          .catch(e => {
-            console.error("User declined geolocation sharing");
+          .catch((e) => {
+            console.error('User declined geolocation sharing');
             this.props.setGeolocationUnavailable();
           });
       })
       .catch(() => {
-        console.error("Unable to improve accuracy");
+        console.error('Unable to improve accuracy');
       });
   };
   renderContent = () => {
@@ -31,8 +31,8 @@ export class Accuracy extends React.Component {
     return (
       <div className="content">
         <p className="accuracy__intro">
-          Your location has been approximated using your IP address. If you'd like to improve the accuracy, please click
-          the button below.
+          Your location has been approximated using your IP address. If you'd like to improve the
+          accuracy, please click the button below.
         </p>
 
         <button onClick={this.handleImproveAccuracy} className="button accuracy__button">
@@ -61,17 +61,15 @@ export class Accuracy extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  resetGeolocation: () => {
-    return Promise.all([
-      dispatch(setGeolocation()),
-      dispatch(setWeather()),
-      dispatch(setPhotos()),
-      dispatch(setChatter()),
-      dispatch(setVideos())
-    ]);
-  },
+  resetGeolocation: () => Promise.all([
+    dispatch(setGeolocation()),
+    dispatch(setWeather()),
+    dispatch(setPhotos()),
+    dispatch(setChatter()),
+    dispatch(setVideos()),
+  ]),
   getGeolocation: () => dispatch(getGeolocation()),
-  setGeolocationUnavailable: () => dispatch(setGeolocationUnavailable())
+  setGeolocationUnavailable: () => dispatch(setGeolocationUnavailable()),
 });
 
 export default connect(undefined, mapDispatchToProps)(Accuracy);

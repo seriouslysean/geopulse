@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Unavailable = () => (
   <section className="section section--spacing section--bg-sky-light unavailable">
