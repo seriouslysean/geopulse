@@ -113,7 +113,7 @@ exports[`should render AboutPage correctly 1`] = `
             <li>
               <a
                 href="https://freegeoip.net/"
-                rel="external"
+                rel="external noopener noreferrer"
                 target="_blank"
                 title="freegeoip.net"
               >
@@ -123,7 +123,7 @@ exports[`should render AboutPage correctly 1`] = `
             <li>
               <a
                 href="https://developers.google.com/maps/"
-                rel="external"
+                rel="external noopener noreferrer"
                 target="_blank"
                 title="Google Maps"
               >
@@ -133,7 +133,7 @@ exports[`should render AboutPage correctly 1`] = `
             <li>
               <a
                 href="https://www.wunderground.com/weather/api/"
-                rel="external"
+                rel="external noopener noreferrer"
                 target="_blank"
                 title="Weather Underground"
               >
@@ -143,7 +143,7 @@ exports[`should render AboutPage correctly 1`] = `
             <li>
               <a
                 href="https://www.instagram.com/developer/"
-                rel="external"
+                rel="external noopener noreferrer"
                 target="_blank"
                 title="Instagram"
               >
@@ -153,7 +153,7 @@ exports[`should render AboutPage correctly 1`] = `
             <li>
               <a
                 href="https://developer.twitter.com/"
-                rel="external"
+                rel="external noopener noreferrer"
                 target="_blank"
                 title="Twitter"
               >
@@ -163,7 +163,7 @@ exports[`should render AboutPage correctly 1`] = `
             <li>
               <a
                 href="https://developers.google.com/youtube/"
-                rel="external"
+                rel="external noopener noreferrer"
                 target="_blank"
                 title="YouTube"
               >
@@ -183,7 +183,7 @@ exports[`should render AboutPage correctly 1`] = `
             <li>
               <a
                 href="https://www.cloudflare.com/"
-                rel="external"
+                rel="external noopener noreferrer"
                 target="_blank"
                 title="Cloudflare"
               >

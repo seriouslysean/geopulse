@@ -2,7 +2,7 @@ import express from 'express';
 import compression from 'compression';
 import { matchRoutes } from 'react-router-config';
 import { forcePrimaryDomain, forceSSL } from '../helpers/domain';
-import { getOriginIp } from '../helpers/originIp';
+import getOriginIp from '../helpers/originIp';
 import Routes from '../../client/src/routes/AppRoutes';
 import renderer from '../helpers/renderer';
 import createStore from '../helpers/createStore';
