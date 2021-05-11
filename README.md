@@ -1,12 +1,12 @@
 # Geopulse
 
-[![CircleCI](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master.svg?style=svg)](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master) [![Maintainability](https://api.codeclimate.com/v1/badges/dbccb166016f5f4200f9/maintainability)](https://codeclimate.com/github/seriouslysean/geopulse-app/maintainability)
+[![CircleCI](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master.svg?style=svg)](https://circleci.com/gh/seriouslysean/geopulse-app/tree/master)
 
 <p align="center"><img src="client/public/assets/geopulse-banner.png" alt="Geopulse" width="1200" class="inline" /></p>
 
 ## Intro
 
-Geopulse is a web app to showcase local content in your area. Currently it shows your location on a map, the weather, photos, tweets and videos within 5km. View it on the web at [https://geopul.se](https://geopul.se).
+Geopulse is a web app to showcase local content in your area. Currently it shows your location on a map, the weather, photos, tweets and videos within 5km.
 
 If you find any bugs or have a question, submit it as a [GitHub Issue](https://github.com/seriouslysean/geopulse-app/issues)!
 
